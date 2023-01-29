@@ -1,0 +1,851 @@
+{
+	"info": {
+		"_postman_id": "40684640-77d0-4787-afcd-d2bf073538e0",
+		"name": "ExploreWithMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23144209"
+	},
+	"item": [
+		{
+			"name": "Hits",
+			"item": [
+				{
+					"name": "Create Hit - Failed - Blank App Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - No App Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - Blank Uri",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - No Uri",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - Blank IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - No IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Failed - No Timestamp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Sucessful",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create hit\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.app, '\"app\" field').to.eql('ewm-main-service');\r",
+									"    pm.expect(jsonData.uri, '\"uri\" field').to.eql('/events/1');\r",
+									"    pm.expect(jsonData.ip, '\"ip\" field').to.eql('192.163.0.1');\r",
+									"    pm.expect(jsonData.timestamp, '\"uri\" field').to.eql('2022-09-06 11:00:23');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hit - Sucessful - Other URI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create hit\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.app, '\"app\" field').to.eql('ewm-main-service');\r",
+									"    pm.expect(jsonData.uri, '\"uri\" field').to.eql('/events');\r",
+									"    pm.expect(jsonData.ip, '\"ip\" field').to.eql('192.163.0.1');\r",
+									"    pm.expect(jsonData.timestamp, '\"uri\" field').to.eql('2022-09-06 11:00:23');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ViewStats",
+			"item": [
+				{
+					"name": "Create Hit - Same IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create hit\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.app, '\"app\" field').to.eql('ewm-main-service');\r",
+									"    pm.expect(jsonData.uri, '\"uri\" field').to.eql('/events/1');\r",
+									"    pm.expect(jsonData.ip, '\"ip\" field').to.eql('192.163.0.1');\r",
+									"    pm.expect(jsonData.timestamp, '\"uri\" field').to.eql('2022-09-06 11:00:23');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStats - No URIs, Unique = false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.ok;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"const source = pm.collectionVariables.get('source');\r",
+									"\r",
+									"pm.test(\"Посты должны содержать поля: app, uri, hits\", function () {\r",
+									"    pm.expect(target[0]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"    pm.expect(target[1]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"В теле ответа должна соблюдаться сортировка по убыванию количества просмотров\", function(){\r",
+									"    pm.expect(target[0].hits).to.be.above(target[1].hits);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2022-01-01 00:00:01"
+								},
+								{
+									"key": "end",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "uris",
+									"value": "/events/1",
+									"disabled": true
+								},
+								{
+									"key": "unique",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStats - No URIs, Unique = true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.ok;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"const source = pm.collectionVariables.get('source');\r",
+									"\r",
+									"pm.test(\"Посты должны содержать поля: app, uri, hits\", function () {\r",
+									"    pm.expect(target[0]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"    pm.expect(target[1]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Каждый из элементов ответа должен иметь 1 hit\", function(){\r",
+									"    pm.expect(target[0].hits).to.equal(1);\r",
+									"    pm.expect(target[1].hits).to.equal(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&unique=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2022-01-01 00:00:01"
+								},
+								{
+									"key": "end",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "uris",
+									"value": "/events/1",
+									"disabled": true
+								},
+								{
+									"key": "unique",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStats - URIs, Unique = false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.ok;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"const source = pm.collectionVariables.get('source');\r",
+									"\r",
+									"pm.test(\"Посты должны содержать поля: app, uri, hits\", function () {\r",
+									"    pm.expect(target[0]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"В теле ответа должно быть два просмотра и корректный URI\", function(){\r",
+									"    pm.expect(target[0].hits).to.equal(2);\r",
+									"    pm.expect(target[0].uri).to.equal('/events/1');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2022-01-01 00:00:01"
+								},
+								{
+									"key": "end",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "uris",
+									"value": "/events/1"
+								},
+								{
+									"key": "unique",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStats - URIs, Unique = true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.ok;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"const source = pm.collectionVariables.get('source');\r",
+									"\r",
+									"pm.test(\"Посты должны содержать поля: app, uri, hits\", function () {\r",
+									"    pm.expect(target[0]).to.have.all.keys('app', 'uri', 'hits');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"В теле ответа должно быть два просмотра и корректный URI\", function(){\r",
+									"    pm.expect(target[0].hits).to.equal(1);\r",
+									"    pm.expect(target[0].uri).to.equal('/events/1');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2022-01-01 00:00:01"
+								},
+								{
+									"key": "end",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "uris",
+									"value": "/events/1"
+								},
+								{
+									"key": "unique",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStats - Failed - End Before Start",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/stats?start=2023-01-01 00:00:01&end=2022-01-01 00:00:01&uris=/events/1&unique=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "end",
+									"value": "2022-01-01 00:00:01"
+								},
+								{
+									"key": "uris",
+									"value": "/events/1"
+								},
+								{
+									"key": "unique",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9090",
+			"type": "string"
+		}
+	]
+}
