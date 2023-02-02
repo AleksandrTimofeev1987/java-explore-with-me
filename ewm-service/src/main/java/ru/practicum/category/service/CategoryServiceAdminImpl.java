@@ -56,11 +56,11 @@ public class CategoryServiceAdminImpl implements CategoryServiceAdmin {
         mapper.toCategoryFromCategoryUpdate(categoryDto, categoryForUpdate);
 
         Category updatedCategory;
-//        try {
+        try {
             updatedCategory = repository.save(categoryForUpdate);
-//        } catch (DataIntegrityViolationException e) {
-//            throw new ConflictException("Category name is a duplicate.");
-//        }
+        } catch (DataIntegrityViolationException e) {
+            throw new ConflictException("Category name is a duplicate.");
+        }
 
         log.debug("Category with ID={} is updated in repository.", id);
         return mapper.toCategoryResponseDto(updatedCategory);

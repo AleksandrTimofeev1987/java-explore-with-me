@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.practicum.exception.model.ApiError;
 import ru.practicum.exception.model.ConflictException;
+import ru.practicum.exception.model.ForbiddenException;
 import ru.practicum.exception.model.NotFoundException;
 
 import javax.validation.ConstraintViolationException;
@@ -36,6 +37,13 @@ public class ErrorHandler {
     public ResponseEntity<Object> handleConflictException(final ConflictException e) {
         log.warn(e.getMessage());
         return buildResponseEntity(new ApiError(HttpStatus.CONFLICT, "Conflict request", e.getMessage(), LocalDateTime.now()));
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(value = HttpStatus.FORBIDDEN)
+    public ResponseEntity<Object> handleForbiddenException(final ForbiddenException e) {
+        log.warn(e.getMessage());
+        return buildResponseEntity(new ApiError(HttpStatus.FORBIDDEN, "Forbidden request", e.getMessage(), LocalDateTime.now()));
     }
 
     @ExceptionHandler
