@@ -64,6 +64,21 @@ public class EventServicePrivateImpl implements EventServicePrivate {
 
         validateEventDate(eventDto.getEventDate());
 
+        Event event = buildNewEvent(userId, eventDto);
+
+
+        Event createdEvent;
+        try {
+            createdEvent = eventRepository.save(event);
+        } catch (DataIntegrityViolationException e) {
+            throw new ConflictException("Event title is duplicate.");
+        }
+
+        log.debug("Event with ID={} is added to repository.", createdEvent.getId());
+        return createdEvent;
+    }
+
+    private Event buildNewEvent(Long userId, EventCreate eventDto) {
         Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", eventDto.getCategory())));
         User initiator = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(String.format("User with id=%d is not found", userId)));
         Location location = locationRepository.save(eventDto.getLocation());
@@ -84,15 +99,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         }
         event.setState(EventState.PENDING);
 
-        Event createdEvent;
-        try {
-        createdEvent = eventRepository.save(event);
-        } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Event title is duplicate.");
-        }
-
-        log.debug("Event with ID={} is added to repository.", createdEvent.getId());
-        return createdEvent;
+        return event;
     }
 
     @Override
@@ -114,7 +121,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
 
         Event updatedEvent;
         try {
-            updatedEvent = eventRepository.save(formEventForUpdate(eventDto, savedEvent));
+            updatedEvent = eventRepository.save(buildEventForUpdate(eventDto, savedEvent));
         } catch (DataIntegrityViolationException e) {
             throw new ConflictException("Event title is a duplicate.");
         }
@@ -122,7 +129,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         return updatedEvent;
     }
 
-    private Event formEventForUpdate(EventUpdatePrivate eventDto, Event event) {
+    private Event buildEventForUpdate(EventUpdatePrivate eventDto, Event event) {
         if (eventDto.getTitle() != null) {
             event.setTitle(eventDto.getTitle());
         }

@@ -54,5 +54,4 @@ public class EventControllerPrivate {
         log.debug("Updating event with id={}", eventId);
         return service.updateEvent(userId, eventId, eventDto);
     }
-
 }
