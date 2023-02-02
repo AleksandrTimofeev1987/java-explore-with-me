@@ -70,6 +70,7 @@ public class Event {
     @Column(name = "confirmed_requests", nullable = false)
     private Integer confirmedRequests;
 
-    @Column(name = "event_state", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "event_state", length = 10, nullable = false)
     private EventState state;
 }

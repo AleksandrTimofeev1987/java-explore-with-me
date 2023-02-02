@@ -1,7 +1,7 @@
 package ru.practicum.event.service;
 
 import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventUpdate;
+import ru.practicum.event.dto.EventUpdatePrivate;
 import ru.practicum.event.dto.EventView;
 import ru.practicum.event.entity.Event;
 
@@ -45,9 +45,9 @@ public interface EventServicePrivate {
      *
      * @param userId ID of user updating event.
      * @param eventId ID if event that the user requested to update.
-     * @param eventDto Category with updated fields.
+     * @param eventDto Event with updated fields.
      *
      * @return Updated event.
      */
-    Event updateEvent(Long userId, Long eventId, EventUpdate eventDto);
+    Event updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto);
 }

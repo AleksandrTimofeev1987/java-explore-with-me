@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.repository.CategoryRepositoryPublic;
 import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventUpdate;
+import ru.practicum.event.dto.EventUpdatePrivate;
 import ru.practicum.event.dto.EventView;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
@@ -96,7 +96,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
     }
 
     @Override
-    public Event updateEvent(Long userId, Long eventId, EventUpdate eventDto) {
+    public Event updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto) {
         log.debug("Request to update event with id={} is received from user with id={}.", eventId, userId);
         if (eventDto.getEventDate() != null) {
             validateEventDate(eventDto.getEventDate());
@@ -122,7 +122,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         return updatedEvent;
     }
 
-    private Event formEventForUpdate(EventUpdate eventDto, Event event) {
+    private Event formEventForUpdate(EventUpdatePrivate eventDto, Event event) {
         if (eventDto.getTitle() != null) {
             event.setTitle(eventDto.getTitle());
         }

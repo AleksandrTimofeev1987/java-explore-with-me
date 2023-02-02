@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventUpdate;
+import ru.practicum.event.dto.EventUpdatePrivate;
 import ru.practicum.event.dto.EventView;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.service.EventServicePrivate;
@@ -48,9 +48,9 @@ public class EventControllerPrivate {
     }
 
     @PatchMapping("/{eventId}")
-    public Event createEvent(@PathVariable Long userId,
+    public Event updateEvent(@PathVariable Long userId,
                              @PathVariable Long eventId,
-                             @Valid @RequestBody EventUpdate eventDto) {
+                             @Valid @RequestBody EventUpdatePrivate eventDto) {
         log.debug("Updating event with id={}", eventId);
         return service.updateEvent(userId, eventId, eventDto);
     }

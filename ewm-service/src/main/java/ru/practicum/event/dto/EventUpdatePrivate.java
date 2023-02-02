@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @Valid
-public class EventUpdate {
+public class EventUpdatePrivate {
 
     @Null
     private Long id;
@@ -43,5 +43,5 @@ public class EventUpdate {
     private Boolean requestModeration;
 
     @NotNull(message = "State action should not be Null")
-    private StateAction stateAction;
+    private StateActionPrivate stateAction;
 }
