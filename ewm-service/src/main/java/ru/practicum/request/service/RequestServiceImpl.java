@@ -65,16 +65,26 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public RequestResponse cancelRequest(Long userId, Long requestId) {
         log.debug("Request to cancel request with id={} is received from user with id={}.", requestId, userId);
         verifyUserExists(userId);
 
         Request requestToCancel = requestRepository.findById(requestId).orElseThrow(() -> new NotFoundException(String.format("Request with id=%d is not found", requestId)));
+
+        if (requestToCancel.getStatus().equals(RequestStatus.CANCELLED)) {
+            throw new ForbiddenException(String.format("Request with is=%d is already cancelled", requestId));
+        }
+
         verifyUserCreatedRequest(userId, requestToCancel);
 
-        requestToCancel.setStatus(RequestStatus.PENDING);
+        requestToCancel.setStatus(RequestStatus.CANCELLED);
 
         Request cancelledRequest = requestRepository.save(requestToCancel);
+        Event event = eventRepository.findById(cancelledRequest.getEvent().getId()).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", cancelledRequest.getEvent().getId())));
+        if (event.getConfirmedRequests() > 0) {
+            eventRepository.setEventConfirmedRequests(cancelledRequest.getEvent().getId(), event.getConfirmedRequests() - 1);
+        }
 
         log.debug("Request with id={} is cancelled. Status={}", cancelledRequest.getId(), cancelledRequest.getStatus());
         return requestMapper.toRequestResponse(cancelledRequest);
@@ -89,7 +99,7 @@ public class RequestServiceImpl implements RequestService {
         request.setEvent(event);
         request.setCreated(LocalDateTime.now());
 
-        if (event.getRequestModeration()) {
+        if (event.getRequestModeration() && event.getParticipantLimit() != 0) {
             request.setStatus(RequestStatus.PENDING);
         } else {
             request.setStatus(RequestStatus.CONFIRMED);
@@ -112,7 +122,7 @@ public class RequestServiceImpl implements RequestService {
     }
 
     private void verifyNoPriorRequests(Long userId, Long eventId) {
-        if (requestRepository.findRequestByRequesterIdAndId(userId, eventId).isPresent()) {
+        if (requestRepository.findRequestByRequesterIdAndEventId(userId, eventId).isPresent()) {
             throw new ConflictException("Repeated request is prohibited");
         }
     }
@@ -128,7 +138,7 @@ public class RequestServiceImpl implements RequestService {
         if (!event.getState().equals(EventState.PUBLISHED)) {
             throw new ConflictException("Cannot participate in unpublished event");
         }
-        if ((event.getParticipantLimit() - event.getConfirmedRequests()) <= 0) {
+        if (event.getParticipantLimit() != 0 && (event.getParticipantLimit() - event.getConfirmedRequests()) <= 0) {
             throw new ConflictException("The limit of participants is reached");
         }
     }

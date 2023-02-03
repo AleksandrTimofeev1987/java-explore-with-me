@@ -1,9 +1,8 @@
 package ru.practicum.event.service;
 
-import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventUpdatePrivate;
-import ru.practicum.event.dto.EventView;
+import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
+import ru.practicum.request.dto.RequestResponse;
 
 import java.util.List;
 
@@ -50,4 +49,25 @@ public interface EventServicePrivate {
      * @return Updated event.
      */
     Event updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto);
+
+    /**
+     * Method gets all requests created for user's event.
+     *
+     * @param userId ID of user requesting events.
+     * @param eventId ID of event initiated by user.
+     *
+     * @return List of requests created for user's event.
+     */
+    List<RequestResponse> getRequests(Long userId, Long eventId);
+
+    /**
+     * Method updates requests statuses for particular user's event.
+     *
+     * @param userId ID of user requesting events.
+     * @param eventId ID of event initiated by user.
+     * @param updateDto Object containing list of request ids and status to be applied
+     *
+     * @return Object containing lists of confirmed and rejected requests.
+     */
+    RequestStatusUpdateResponse updateRequests(Long userId, Long eventId, RequestStatusUpdateRequest updateDto);
 }

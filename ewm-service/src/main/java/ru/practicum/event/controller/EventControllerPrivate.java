@@ -5,11 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventUpdatePrivate;
-import ru.practicum.event.dto.EventView;
+import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.service.EventServicePrivate;
+import ru.practicum.request.dto.RequestResponse;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
@@ -53,5 +52,20 @@ public class EventControllerPrivate {
                              @Valid @RequestBody EventUpdatePrivate eventDto) {
         log.debug("Updating event with id={}", eventId);
         return service.updateEvent(userId, eventId, eventDto);
+    }
+
+    @GetMapping("/{eventId}/requests")
+    public List<RequestResponse> getRequests(@PathVariable Long userId,
+                                             @PathVariable Long eventId) {
+        log.debug("Getting requests for event with id={}", eventId);
+        return service.getRequests(userId, eventId);
+    }
+
+    @PatchMapping("/{eventId}/requests")
+    public RequestStatusUpdateResponse updateRequests(@PathVariable Long userId,
+                                                            @PathVariable Long eventId,
+                                                            @RequestBody RequestStatusUpdateRequest updateDto) {
+        log.debug("Getting requests for event with id={}", eventId);
+        return service.updateRequests(userId, eventId, updateDto);
     }
 }
