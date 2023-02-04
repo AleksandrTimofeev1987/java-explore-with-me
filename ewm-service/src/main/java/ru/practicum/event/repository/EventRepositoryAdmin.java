@@ -10,6 +10,7 @@ import ru.practicum.event.entity.EventState;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public interface EventRepositoryAdmin extends JpaRepository<Event, Long> {
@@ -81,4 +82,12 @@ public interface EventRepositoryAdmin extends JpaRepository<Event, Long> {
             "e.state IN :states AND " +
             "e.category.id IN :categories")
     List<Event> findByUsersAndStatesAndCategories(@Param("users") Long[] users, @Param("states") EventState[] states, @Param("categories") Long[] categories, @Param("start") LocalDateTime rangeStart, @Param("end") LocalDateTime rangeEnd, Pageable page);
+
+    @Query(value = "" +
+            "SELECT e " +
+            "FROM Event e " +
+            "WHERE e.id IN :ids AND " +
+            "e.state = 'PUBLISHED' " +
+            "ORDER BY e.id")
+    Set<Event> findEventsByIds(@Param("ids") Long[] eventIds);
 }

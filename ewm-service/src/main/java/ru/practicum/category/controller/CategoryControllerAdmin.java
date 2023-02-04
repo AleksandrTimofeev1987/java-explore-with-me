@@ -46,5 +46,4 @@ public class CategoryControllerAdmin {
         log.debug("Updating category with id={}", catId);
         return service.updateCategory(catId, categoryDto);
     }
-
 }
