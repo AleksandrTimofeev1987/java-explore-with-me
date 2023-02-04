@@ -10,7 +10,7 @@ import ru.practicum.compilation.dto.CompilationResponse;
 import ru.practicum.compilation.dto.CompilationUpdate;
 import ru.practicum.compilation.entity.Compilation;
 import ru.practicum.compilation.mapper.CompilationMapper;
-import ru.practicum.compilation.repository.CompilationRepository;
+import ru.practicum.compilation.repository.CompilationRepositoryAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.repository.EventRepositoryAdmin;
 import ru.practicum.exception.model.ConflictException;
@@ -22,9 +22,9 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CompilationServiceImpl implements CompilationService {
+public class CompilationServiceIAdminmpl implements CompilationServiceAdmin {
 
-    private final CompilationRepository compRepository;
+    private final CompilationRepositoryAdmin compRepository;
     private final EventRepositoryAdmin eventRepository;
     private final CompilationMapper mapper;
 

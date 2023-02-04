@@ -27,9 +27,9 @@ public class CategoryControllerPublic {
         return service.getCategories(from, size);
     }
 
-    @GetMapping("/{id}")
-    public CategoryResponse getCategoryById(@PathVariable @PositiveOrZero Long id) {
-        log.debug("Getting category with id={}", id);
-        return service.getCategoryById(id);
+    @GetMapping("/{catId}")
+    public CategoryResponse getCategoryById(@PathVariable @PositiveOrZero Long catId) {
+        log.debug("Getting category with id={}", catId);
+        return service.getCategoryById(catId);
     }
 }

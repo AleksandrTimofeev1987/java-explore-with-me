@@ -34,15 +34,15 @@ public class CategoryServicePublicImpl implements CategoryServicePublic {
         log.debug("A list of categories is received from repository with size of {}.", foundCategories.size());
         return foundCategories
                 .stream()
-                .map(category -> mapper.toCategoryResponseDto(category))
+                .map(mapper::toCategoryResponseDto)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public CategoryResponse getCategoryById(Long id) {
-        log.debug("Category with id={} is requested.", id);
-        Category foundCategory = repository.findById(id).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", id)));
-        log.debug("Category with ID={} is received from repository.", id);
+    public CategoryResponse getCategoryById(Long catId) {
+        log.debug("Category with id={} is requested.", catId);
+        Category foundCategory = repository.findById(catId).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", catId)));
+        log.debug("Category with id={} is received from repository.", catId);
         return mapper.toCategoryResponseDto(foundCategory);
     }
 }

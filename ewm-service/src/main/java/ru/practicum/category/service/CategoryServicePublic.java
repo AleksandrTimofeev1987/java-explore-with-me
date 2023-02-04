@@ -19,9 +19,9 @@ public interface CategoryServicePublic {
     /**
      * Method returns category by ID.
      *
-     * @param id ID of category to select.
+     * @param catId ID of category to select.
      *
      * @return Category with this ID.
      */
-    CategoryResponse getCategoryById(Long id);
+    CategoryResponse getCategoryById(Long catId);
 }

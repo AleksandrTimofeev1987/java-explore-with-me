@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.practicum.compilation.dto.CompilationCreate;
 import ru.practicum.compilation.dto.CompilationResponse;
 import ru.practicum.compilation.dto.CompilationUpdate;
-import ru.practicum.compilation.service.CompilationService;
+import ru.practicum.compilation.service.CompilationServiceAdmin;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
@@ -18,9 +18,9 @@ import javax.validation.constraints.Positive;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class CompilationController {
+public class CompilationControllerAdmin {
 
-    private final CompilationService service;
+    private final CompilationServiceAdmin service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

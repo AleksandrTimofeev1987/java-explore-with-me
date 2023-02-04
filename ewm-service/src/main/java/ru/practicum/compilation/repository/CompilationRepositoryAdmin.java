@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import ru.practicum.compilation.entity.Compilation;
 
 @Repository
-public interface CompilationRepository extends JpaRepository<Compilation, Long> {
+public interface CompilationRepositoryAdmin extends JpaRepository<Compilation, Long> {
 }
