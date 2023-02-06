@@ -43,9 +43,9 @@
 							"raw": "{\r\n  \"app\": \"\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -88,9 +88,9 @@
 							"raw": "{\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -133,9 +133,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -178,9 +178,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -223,9 +223,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -268,9 +268,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -313,9 +313,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -366,9 +366,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -419,9 +419,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -477,9 +477,9 @@
 							"raw": "{\r\n  \"app\": \"ewm-main-service\",\r\n  \"uri\": \"/events/1\",\r\n  \"ip\": \"192.163.0.1\",\r\n  \"timestamp\": \"2022-09-06 11:00:23\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/hit",
+							"raw": "{{statUrl}}/hit",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"hit"
@@ -527,9 +527,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01",
+							"raw": "{{statUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"stats"
@@ -598,9 +598,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&unique=true",
+							"raw": "{{statUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&unique=true",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"stats"
@@ -667,9 +667,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=false",
+							"raw": "{{statUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=false",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"stats"
@@ -735,9 +735,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=true",
+							"raw": "{{statUrl}}/stats?start=2022-01-01 00:00:01&end=2023-01-01 00:00:01&uris=/events/1&unique=true",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"stats"
@@ -789,9 +789,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/stats?start=2023-01-01 00:00:01&end=2022-01-01 00:00:01&uris=/events/1&unique=true",
+							"raw": "{{statUrl}}/stats?start=2023-01-01 00:00:01&end=2022-01-01 00:00:01&uris=/events/1&unique=true",
 							"host": [
-								"{{baseUrl}}"
+								"{{statUrl}}"
 							],
 							"path": [
 								"stats"
@@ -812,6 +812,5666 @@
 								{
 									"key": "unique",
 									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin: user",
+			"item": [
+				{
+					"name": "Post User - Failed - Null Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"email_1@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User - Failed - Blank Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\",\r\n  \"email\": \"email_1@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User - Failed - Null Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User - Failed - Blank Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_1\",\r\n  \"email\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_1');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_1@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_1\",\r\n  \"email\": \"email_1@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User - Failed - Duplicate Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 409 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([409]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_1\",\r\n  \"email\": \"email_1@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/:userId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User - Failed - Incorrect ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([404]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/:userId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_3');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_3@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_3\",\r\n  \"email\": \"email_3@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_4');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_4@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_4\",\r\n  \"email\": \"email_4@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users - No params - 2 users Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(2);\r",
+									"\r",
+									"    pm.expect(jsonData[0].name, 'result[0]: \"name\" field').to.eql('user_name_3');\r",
+									"    pm.expect(jsonData[0].email, 'result[0]: \"email\" field').to.eql('email_3@email.ru');\r",
+									"        pm.expect(jsonData[1].name, 'result[0]: \"name\" field').to.eql('user_name_4');\r",
+									"    pm.expect(jsonData[1].email, 'result[0]: \"email\" field').to.eql('email_4@email.ru');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users - Paginated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].name, 'result[0]: \"name\" field').to.eql('user_name_3');\r",
+									"    pm.expect(jsonData[0].email, 'result[0]: \"email\" field').to.eql('email_3@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/?from=0&size=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_5');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_5@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_5\",\r\n  \"email\": \"email_5@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users - Select IDs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(2);\r",
+									"\r",
+									"    pm.expect(jsonData[0].name, 'result[0]: \"name\" field').to.eql('user_name_3');\r",
+									"    pm.expect(jsonData[0].email, 'result[0]: \"email\" field').to.eql('email_3@email.ru');\r",
+									"        pm.expect(jsonData[1].name, 'result[0]: \"name\" field').to.eql('user_name_4');\r",
+									"    pm.expect(jsonData[1].email, 'result[0]: \"email\" field').to.eql('email_4@email.ru');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/?ids=3,4",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "3,4"
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users - Failed - Incorrect From Param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/?from=-1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "-1"
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users - Failed - Incorrect Size Param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users/?from=0&size=0",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin: category",
+			"item": [
+				{
+					"name": "Post Category - Failed - Null Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category - Failed - Blank Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('category_name_1');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category - Failed - Duplicate Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 409 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([409]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Category_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('updated_category_name_1');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"updated_category_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories/:catId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":catId"
+							],
+							"variable": [
+								{
+									"key": "catId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Category_1 - Failed - Incorrect ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([404]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"updated_category_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories/:catId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":catId"
+							],
+							"variable": [
+								{
+									"key": "catId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories/:catId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":catId"
+							],
+							"variable": [
+								{
+									"key": "catId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category - Failed - Incorrect ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([404]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories/:catId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":catId"
+							],
+							"variable": [
+								{
+									"key": "catId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('category_name_3');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_3\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('category_name_4');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('category_name_5');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_5\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public: category",
+			"item": [
+				{
+					"name": "Get Categories - No params - 3 categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get categories\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'categories count in total').to.eql(3);\r",
+									"\r",
+									"    pm.expect(jsonData[0].name, 'result[0]: \"name\" field').to.eql('category_name_3');\r",
+									"    pm.expect(jsonData[1].name, 'result[0]: \"name\" field').to.eql('category_name_4');\r",
+									"    pm.expect(jsonData[2].name, 'result[0]: \"name\" field').to.eql('category_name_5');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories - Paginated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get categories\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'categories count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].name, 'result[0]: \"name\" field').to.eql('category_name_3');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/categories/?from=0&size=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get categories\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.name, 'result: \"name\" field').to.eql('category_name_3');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/categories/:catId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"categories",
+								":catId"
+							],
+							"variable": [
+								{
+									"key": "catId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private: event",
+			"item": [
+				{
+					"name": "Post Event_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_1');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_1');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_1');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-31 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_1\",\r\n  \"annotation\": \"new_event_annotation_1\",\r\n  \"description\": \"new_event_description_1\",\r\n  \"category\": 3,\r\n  \"eventDate\": \"2024-12-31 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 1,\r\n  \"requestModeration\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By User ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_2');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_2');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_2');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-31 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(10);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_2\",\r\n  \"annotation\": \"new_event_annotation_2\",\r\n  \"description\": \"new_event_description_2\",\r\n  \"category\": 3,\r\n  \"eventDate\": \"2024-12-31 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 10,\r\n  \"requestModeration\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Other User ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(1);;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Event_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('updated_event_title_1');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('updated_event_annotation_1');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('updated_event_description_1');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-30 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(100);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"updated_event_title_1\",\r\n  \"annotation\": \"updated_event_annotation_1\",\r\n  \"description\": \"updated_event_description_1\",\r\n  \"category\": 4,\r\n  \"eventDate\": \"2024-12-30 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 50.00,\r\n    \"lon\": 30.00\r\n  },\r\n  \"paid\": false,\r\n  \"participantLimit\": 100,\r\n  \"requestModeration\": false,\r\n  \"stateAction\": \"SEND_TO_REVIEW\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin: event",
+			"item": [
+				{
+					"name": "Get Events By Range",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[1].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "states",
+									"value": "PENDING",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=3&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3"
+								},
+								{
+									"key": "states",
+									"value": "PENDING",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By States",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[1].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?states=PENDING&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "states",
+									"value": "PENDING"
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?categories=4&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "states",
+									"value": "PENDING",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "4"
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Users and States",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=3&states=PENDING&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3"
+								},
+								{
+									"key": "states",
+									"value": "PENDING"
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Users and States",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=3&states=PENDING&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3"
+								},
+								{
+									"key": "states",
+									"value": "PENDING"
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Users and Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=3&categories=4&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3"
+								},
+								{
+									"key": "states",
+									"value": "PENDING",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "4"
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By States and Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?states=PENDING&categories=4&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "states",
+									"value": "PENDING"
+								},
+								{
+									"key": "categories",
+									"value": "4"
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By All Filters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=3&states=PENDING&categories=4&rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "3"
+								},
+								{
+									"key": "states",
+									"value": "PENDING"
+								},
+								{
+									"key": "categories",
+									"value": "4"
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_1 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('admin_updated_event_title_1');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('admin_updated_event_annotation_1');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('admin_updated_event_description_1');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-11-30 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(150);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.not.equal(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"admin_updated_event_title_1\",\r\n  \"annotation\": \"admin_updated_event_annotation_1\",\r\n  \"description\": \"admin_updated_event_description_1\",\r\n  \"category\": 3,\r\n  \"eventDate\": \"2024-11-30 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 51.00,\r\n    \"lon\": 31.00\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 150,\r\n  \"requestModeration\": false,\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_2 - REJECT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_2');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_2');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_2');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-31 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(10);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.equal(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('CANCELED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"REJECT_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private: request",
+			"item": [
+				{
+					"name": "Post Request_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID - 1 request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.confirmedRequests, 'result: \"confirmedRequests\" field').to.eql(1);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Requests By User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get requests\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData[0].status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Request_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CANCELED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests/:requestId/cancel",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests",
+								":requestId",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								},
+								{
+									"key": "requestId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event - 0 requests",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.confirmedRequests, 'result: \"confirmedRequests\" field').to.eql(0);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private: event/requests",
+			"item": [
+				{
+					"name": "Get Requests By User's Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get requests\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData[0].status, '\"status\" field').to.eql('CANCELED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_6');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_6@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_6\",\r\n  \"email\": \"email_6@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_3');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_3');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_3');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-31 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_3\",\r\n  \"annotation\": \"new_event_annotation_3\",\r\n  \"description\": \"new_event_description_3\",\r\n  \"category\": 3,\r\n  \"eventDate\": \"2024-12-31 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 1,\r\n  \"requestModeration\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_3 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=3",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(5);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=3",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(6);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=3",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Requests By User's Event_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get requests\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'requests count in total').to.eql(3);\r",
+									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData[0].requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData[0].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData[0].status, '\"status\" field').to.eql('PENDING');\r",
+									"    pm.expect(jsonData[1].id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData[1].requester, '\"requester\" field').to.eql(5);\r",
+									"    pm.expect(jsonData[1].event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData[1].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData[1].status, '\"status\" field').to.eql('PENDING');\r",
+									"    pm.expect(jsonData[2].id, '\"id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData[2].requester, '\"requester\" field').to.eql(6);\r",
+									"    pm.expect(jsonData[2].event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData[2].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData[2].status, '\"status\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Requests for Event_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get requests\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.confirmedRequests.length, 'requests count in confirmedRequests').to.eql(1);\r",
+									"        pm.expect(jsonData.rejectedRequests.length, 'requests count in rejectedRequests').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests[0].id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.confirmedRequests[0].requester, '\"requester\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.confirmedRequests[0].event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.confirmedRequests[0].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.confirmedRequests[0].status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestIds\": [\r\n    2\r\n  ],\r\n  \"status\": \"CONFIRMED\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Requests for Event_3 - Failed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 409 и данные в формате json\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([409]);    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestIds\": [\r\n    2\r\n  ],\r\n  \"status\": \"REJECTED\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID - 1 request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.confirmedRequests, 'result: \"confirmedRequests\" field').to.eql(1);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_7');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_7@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_7\",\r\n  \"email\": \"email_7@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_4');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_4');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_4');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.eql('2024-12-31 15:10:05');\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_4\",\r\n  \"annotation\": \"new_event_annotation_4\",\r\n  \"description\": \"new_event_description_4\",\r\n  \"category\": 4,\r\n  \"eventDate\": \"2024-12-31 15:10:05\",\r\n  \"location\": {\r\n    \"lat\": 55.00,\r\n    \"lon\": 37.00\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 1,\r\n  \"requestModeration\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_4 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(5);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(7);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=4",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "4"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Requests for Event_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get requests\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(jsonData.rejectedRequests[0].id, '\"id\" field').to.eql(5);\r",
+									"    pm.expect(jsonData.rejectedRequests[0].requester, '\"requester\" field').to.eql(7);\r",
+									"    pm.expect(jsonData.rejectedRequests[0].event, '\"event\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.rejectedRequests[0].created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.rejectedRequests[0].status, '\"status\" field').to.eql('REJECTED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestIds\": [\r\n    5\r\n  ],\r\n  \"status\": \"REJECTED\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId/requests",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId",
+								"requests"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "eventId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin: compilations",
+			"item": [
+				{
+					"name": "Post Compilation_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('compilation_1');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(1);\r",
+									"    pm.expect(jsonData.events[1].id, '\"id\" field of event').to.eql(2);\r",
+									"    pm.expect(jsonData.events[2].id, '\"id\" field of event').to.eql(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"pinned\": false,\r\n  \"title\": \"compilation_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Compilation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Compilation_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('compilation_2');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(1);\r",
+									"    pm.expect(jsonData.events[1].id, '\"id\" field of event').to.eql(2);\r",
+									"    pm.expect(jsonData.events[2].id, '\"id\" field of event').to.eql(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"pinned\": true,\r\n  \"title\": \"compilation_2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Compilation_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('updated_compilation_2');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    3\r\n  ],\r\n  \"pinned\": true,\r\n  \"title\": \"updated_compilation_2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Compilation_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('compilation_3');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [],\r\n  \"pinned\": false,\r\n  \"title\": \"compilation_3\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public: compilations",
+			"item": [
+				{
+					"name": "Get Compilations - Without Pinned",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(2);\r",
+									"\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData[1].id, 'result[0]: \"id\" field').to.eql(3);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilations - Pinned",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/?pinned=true",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pinned",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilations - Unpinned",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(3);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/?pinned=false",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pinned",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilations - Paginated Size",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/?from=0&size=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilations - Paginated From",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(1);\r",
+									"\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(3);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/?from=1&size=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilation By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilation By Id - Failed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public: event",
+			"item": [
+				{
+					"name": "Get Event By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.views, 'result: \"views\" field').to.eql(1);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID - 2 views",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.views, 'result: \"views\" field').to.eql(2);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By Range",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events?rangeStart=2024-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "paid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2024-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "onlyAvailable",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "EVENT_DATE",
+									"disabled": true
 								}
 							]
 						}
@@ -843,8 +6503,13 @@
 	],
 	"variable": [
 		{
-			"key": "baseUrl",
+			"key": "statUrl",
 			"value": "http://localhost:9090",
+			"type": "string"
+		},
+		{
+			"key": "mainUrl",
+			"value": "http://localhost:8080",
 			"type": "string"
 		}
 	]
