@@ -9,8 +9,8 @@ import javax.persistence.*;
 @ToString
 @Embeddable
 @AttributeOverrides({
-        @AttributeOverride( name = "lat", column = @Column(name = "location_lat")),
-        @AttributeOverride( name = "lon", column = @Column(name = "location_lon"))
+        @AttributeOverride(name = "lat", column = @Column(name = "location_lat")),
+        @AttributeOverride(name = "lon", column = @Column(name = "location_lon"))
 })
 public class Location {
 
