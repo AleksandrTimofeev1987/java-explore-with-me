@@ -17,7 +17,7 @@ public interface EventServicePrivate {
      *
      * @return List of events initiated by user.
      */
-    List<EventView> getEvents(Long userId, Integer from, Integer size);
+    List<EventResponse> getEvents(Long userId, Integer from, Integer size);
 
     /**
      * Method gets event initiated by user from repository.

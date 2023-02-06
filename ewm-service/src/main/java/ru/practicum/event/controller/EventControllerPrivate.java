@@ -25,7 +25,7 @@ public class EventControllerPrivate {
     private final EventServicePrivate service;
 
     @GetMapping
-    public List<EventView> getEvents(@PathVariable Long userId,
+    public List<EventResponse> getEvents(@PathVariable Long userId,
                                      @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                      @Positive @RequestParam(defaultValue = "10") Integer size) {
         log.debug("Getting events");

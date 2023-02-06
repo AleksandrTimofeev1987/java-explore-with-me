@@ -9,7 +9,7 @@ import ru.practicum.category.dto.CategoryResponse;
 import ru.practicum.category.dto.CategoryUpdate;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.mapper.CategoryMapper;
-import ru.practicum.category.repository.CategoryRepositoryAdmin;
+import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
@@ -18,7 +18,7 @@ import ru.practicum.exception.model.NotFoundException;
 @Slf4j
 public class CategoryServiceAdminImpl implements CategoryServiceAdmin {
 
-    private final CategoryRepositoryAdmin repository;
+    private final CategoryRepository repository;
     private final CategoryMapper mapper;
 
     @Override

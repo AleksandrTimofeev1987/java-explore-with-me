@@ -10,13 +10,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.practicum.category.entity.Category;
-import ru.practicum.category.repository.CategoryRepositoryPublic;
+import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.Location;
 import ru.practicum.event.entity.QEvent;
-import ru.practicum.event.repository.EventRepositoryAdmin;
+import ru.practicum.event.repository.EventRepository;
 import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
@@ -30,8 +30,8 @@ import java.util.List;
 public class EventServiceAdminImpl implements EventServiceAdmin {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
-    private final EventRepositoryAdmin eventRepository;
-    private final CategoryRepositoryPublic categoryRepository;
+    private final EventRepository eventRepository;
+    private final CategoryRepository categoryRepository;
     private final LocationRepository locationRepository;
 
 

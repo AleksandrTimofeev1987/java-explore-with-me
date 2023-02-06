@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import ru.practicum.event.repository.EventRepository;
 import ru.practicum.exception.model.ForbiddenException;
 import ru.practicum.request.dto.RequestResponse;
 import ru.practicum.event.entity.Event;
@@ -12,7 +13,6 @@ import ru.practicum.event.entity.EventState;
 import ru.practicum.request.entity.Request;
 import ru.practicum.request.entity.RequestStatus;
 import ru.practicum.request.mapper.RequestMapper;
-import ru.practicum.event.repository.EventRepositoryPrivate;
 import ru.practicum.request.repository.RequestRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 public class RequestServiceImpl implements RequestService {
 
     private final RequestRepository requestRepository;
-    private final EventRepositoryPrivate eventRepository;
+    private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final RequestMapper requestMapper;
 

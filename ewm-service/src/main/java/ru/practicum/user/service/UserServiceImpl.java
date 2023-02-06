@@ -1,5 +1,7 @@
 package ru.practicum.user.service;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -12,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 import ru.practicum.user.dto.UserResponse;
+import ru.practicum.user.entity.QUser;
 import ru.practicum.user.entity.User;
 import ru.practicum.user.mapper.UserMapper;
 import ru.practicum.user.repository.UserRepository;
@@ -35,17 +38,21 @@ public class UserServiceImpl implements UserService {
         log.debug("A list of users is requested with the following pagination parameters: from={} and size={}.", from, size);
 
         Pageable page = PageRequest.of(from / size, size, SORT_BY_ID);
-        List<User> foundUsers;
-        if (ids == null) {
-            foundUsers = repository.findAll(page).getContent();
-        } else {
-            foundUsers = repository.findUsersById(ids, page);
+
+        QUser qUser = QUser.user;
+
+        BooleanExpression expression = Expressions.asBoolean(true).isTrue();
+
+        if (ids != null) {
+            expression = expression.and(qUser.id.in(ids));
         }
+
+        List<User> foundUsers = repository.findAll(expression, page).getContent();
 
         log.debug("A list of users is received from repository with size of {}.", foundUsers.size());
         return foundUsers
                 .stream()
-                .map(user -> mapper.toUserResponseDto(user))
+                .map(mapper::toUserResponseDto)
                 .collect(Collectors.toList());
     }
 

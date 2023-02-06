@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import ru.practicum.category.dto.CategoryResponse;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.mapper.CategoryMapper;
-import ru.practicum.category.repository.CategoryRepositoryPublic;
+import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.exception.model.NotFoundException;
 
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class CategoryServicePublicImpl implements CategoryServicePublic {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
-    private final CategoryRepositoryPublic repository;
+    private final CategoryRepository repository;
     private final CategoryMapper mapper;
 
     @Override

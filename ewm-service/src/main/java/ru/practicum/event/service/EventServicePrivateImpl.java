@@ -1,5 +1,6 @@
 package ru.practicum.event.service;
 
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -10,13 +11,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.category.entity.Category;
-import ru.practicum.category.repository.CategoryRepositoryPublic;
+import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.Location;
 import ru.practicum.event.mapper.EventMapper;
-import ru.practicum.event.repository.EventRepositoryPrivate;
+import ru.practicum.event.repository.EventRepository;
 import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
@@ -39,24 +40,27 @@ import java.util.stream.Collectors;
 public class EventServicePrivateImpl implements EventServicePrivate {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
-    private final EventRepositoryPrivate eventRepository;
+    private final EventRepository eventRepository;
     private final UserRepository userRepository;
-    private final CategoryRepositoryPublic categoryRepository;
+    private final CategoryRepository categoryRepository;
     private final LocationRepository locationRepository;
     private final RequestRepository requestRepository;
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
 
     @Override
-    public List<EventView> getEvents(Long userId, Integer from, Integer size) {
+    public List<EventResponse> getEvents(Long userId, Integer from, Integer size) {
         log.debug("A list of events initiated by user with id={} is requested with the following pagination parameters: from={} and size={}.", userId, from, size);
         verifyUserExists(userId);
 
         Pageable page = PageRequest.of(from / size, size, SORT_BY_ID);
-        List<EventView> foundEvents = eventRepository.findEventByInitiatorId(userId, page);
+        List<Event> foundEvents = eventRepository.findEventsByInitiatorId(userId, page);
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return foundEvents;
+        return foundEvents
+                .stream()
+                .map(eventMapper::toEventResponse)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -124,11 +128,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         verifyUserExists(userId);
         verifyEventExists(eventId);
 
-        List<Request> allRequestsById = requestRepository.findRequestByEventId(eventId);
-        List<Request> foundRequests = allRequestsById
-                .stream()
-                .filter(request -> request.getEvent().getInitiator().getId().equals(userId))
-                .collect(Collectors.toList());
+        List<Request> foundRequests = requestRepository.findRequestByEventId(userId, eventId);
 
         log.debug("A list of requests is received from repository with size of {}.", foundRequests.size());
         return foundRequests

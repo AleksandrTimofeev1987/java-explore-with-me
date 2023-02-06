@@ -10,9 +10,9 @@ import ru.practicum.compilation.dto.CompilationResponse;
 import ru.practicum.compilation.dto.CompilationUpdate;
 import ru.practicum.compilation.entity.Compilation;
 import ru.practicum.compilation.mapper.CompilationMapper;
-import ru.practicum.compilation.repository.CompilationRepositoryAdmin;
+import ru.practicum.compilation.repository.CompilationRepository;
 import ru.practicum.event.entity.Event;
-import ru.practicum.event.repository.EventRepositoryAdmin;
+import ru.practicum.event.repository.EventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
@@ -24,8 +24,8 @@ import java.util.Set;
 @Slf4j
 public class CompilationServiceIAdminImpl implements CompilationServiceAdmin {
 
-    private final CompilationRepositoryAdmin compRepository;
-    private final EventRepositoryAdmin eventRepository;
+    private final CompilationRepository compRepository;
+    private final EventRepository eventRepository;
     private final CompilationMapper mapper;
 
     @Override
