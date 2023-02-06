@@ -1,5 +1,7 @@
 package ru.practicum.event.service;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -13,6 +15,7 @@ import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.Location;
+import ru.practicum.event.entity.QEvent;
 import ru.practicum.event.repository.EventRepositoryAdmin;
 import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
@@ -36,7 +39,31 @@ public class EventServiceAdminImpl implements EventServiceAdmin {
     public List<Event> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
         log.debug("A list of events is requested with the following pagination parameters: from={} and size={}.", from, size);
         Pageable page = PageRequest.of(from / size, size, SORT_BY_ID);
-        List<Event> foundEvents = findEventsByParameters(users, states, categories, rangeStart, rangeEnd, page);
+
+        QEvent qEvent = QEvent.event;
+
+        BooleanExpression expression = Expressions.asBoolean(true).isTrue();
+
+        if (users != null) {
+            expression = expression.and(qEvent.initiator.id.in(users));
+        }
+        if (states != null) {
+            expression = expression.and(qEvent.state.in(states));
+        }
+        if (categories != null) {
+            expression = expression.and(qEvent.category.id.in(categories));
+        }
+        if (rangeStart != null) {
+            expression = expression.and(qEvent.eventDate.after(rangeStart));
+        }
+        if (rangeEnd != null) {
+            expression = expression.and(qEvent.eventDate.before(rangeEnd));
+        }
+        if (rangeEnd != null) {
+            expression = expression.and(qEvent.eventDate.before(rangeEnd));
+        }
+
+        List<Event> foundEvents = eventRepository.findAll(expression, page).getContent();
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
         return foundEvents;
@@ -60,29 +87,6 @@ public class EventServiceAdminImpl implements EventServiceAdmin {
         }
         log.debug("Event with ID={} is updated.", eventId);
         return updatedEvent;
-    }
-
-    private List<Event> findEventsByParameters(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Pageable page) {
-        List<Event> foundEvents;
-
-        if (users == null && states == null && categories == null) {
-            foundEvents = eventRepository.findByRange(rangeStart, rangeEnd, page);
-        } else if (users != null && states == null && categories == null) {
-            foundEvents = eventRepository.findByUsers(users, rangeStart, rangeEnd, page);
-        } else if (users == null && states != null && categories == null) {
-            foundEvents = eventRepository.findByStates(states, rangeStart, rangeEnd, page);
-        } else if (users == null && states == null && categories != null) {
-            foundEvents = eventRepository.findByCategories(categories, rangeStart, rangeEnd, page);
-        } else if (users != null && states != null && categories == null) {
-            foundEvents = eventRepository.findByUsersAndStates(users, states, rangeStart, rangeEnd, page);
-        } else if (users != null && states == null && categories != null) {
-            foundEvents = eventRepository.findByUsersAndCategories(users, categories, rangeStart, rangeEnd, page);
-        } else if (users == null && states != null && categories != null) {
-            foundEvents = eventRepository.findByStatesAndCategories(states, categories, rangeStart, rangeEnd, page);
-        } else {
-            foundEvents = eventRepository.findByUsersAndStatesAndCategories(users, states, categories, rangeStart, rangeEnd, page);
-        }
-        return foundEvents;
     }
 
     private Event formEventForUpdate(EventUpdateAdmin eventDto, Event event) {

@@ -3,6 +3,7 @@ package ru.practicum.event.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import ru.practicum.event.entity.Location;
 
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Valid
 public class EventUpdatePrivate {
 
@@ -29,8 +31,7 @@ public class EventUpdatePrivate {
     @Positive(message = "Event category reference should be a positive number")
     private Long category;
 
-    @Future(message = "Event date should be in the future")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
 
     private Location location;
@@ -42,6 +43,5 @@ public class EventUpdatePrivate {
 
     private Boolean requestModeration;
 
-    @NotNull(message = "State action should not be Null")
     private StateActionPrivate stateAction;
 }

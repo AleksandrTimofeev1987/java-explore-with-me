@@ -72,13 +72,13 @@ public class RequestServiceImpl implements RequestService {
 
         Request requestToCancel = requestRepository.findById(requestId).orElseThrow(() -> new NotFoundException(String.format("Request with id=%d is not found", requestId)));
 
-        if (requestToCancel.getStatus().equals(RequestStatus.CANCELLED)) {
+        if (requestToCancel.getStatus().equals(RequestStatus.CANCELED)) {
             throw new ForbiddenException(String.format("Request with is=%d is already cancelled", requestId));
         }
 
         verifyUserCreatedRequest(userId, requestToCancel);
 
-        requestToCancel.setStatus(RequestStatus.CANCELLED);
+        requestToCancel.setStatus(RequestStatus.CANCELED);
 
         Request cancelledRequest = requestRepository.save(requestToCancel);
         Event event = eventRepository.findById(cancelledRequest.getEvent().getId()).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", cancelledRequest.getEvent().getId())));

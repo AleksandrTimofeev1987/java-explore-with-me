@@ -11,8 +11,10 @@ import ru.practicum.category.dto.CategoryUpdate;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.mapper.CategoryMapper;
 import ru.practicum.category.service.CategoryServiceAdminImpl;
+import ru.practicum.exception.model.BadRequestException;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 @RestController
@@ -42,8 +44,15 @@ public class CategoryControllerAdmin {
 
     @PatchMapping("/{catId}")
     public CategoryResponse updateItem(@Positive @PathVariable Long catId,
-                                       @RequestBody CategoryUpdate categoryDto) {
+                                       @RequestBody @NotNull CategoryUpdate categoryDto) {
         log.debug("Updating category with id={}", catId);
+        verifyCategoryDto(categoryDto);
         return service.updateCategory(catId, categoryDto);
+    }
+
+    private void verifyCategoryDto(CategoryUpdate categoryDto) {
+        if (categoryDto.getName() == null) {
+            throw new BadRequestException("Parameters of the update object should not be null");
+        }
     }
 }

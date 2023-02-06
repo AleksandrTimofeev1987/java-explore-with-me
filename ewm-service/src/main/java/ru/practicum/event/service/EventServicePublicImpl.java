@@ -1,24 +1,89 @@
 package ru.practicum.event.service;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import ru.practicum.event.controller.SearchSort;
+import ru.practicum.event.dto.EventResponse;
 import ru.practicum.event.entity.Event;
+import ru.practicum.event.entity.EventState;
+import ru.practicum.event.entity.QEvent;
+import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepositoryPublic;
 import ru.practicum.exception.model.NotFoundException;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class EventServicePublicImpl implements EventServicePublic {
 
+    private static final Sort SORT_BY_DATE = Sort.by(Sort.Direction.ASC, "eventDate");
+    private static final Sort SORT_BY_VIEWS = Sort.by(Sort.Direction.ASC, "views");
     private final EventRepositoryPublic repository;
+    private final EventMapper mapper;
+
+    @Override
+    public List<EventResponse> getEvents(String text, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd, Boolean onlyAvailable, SearchSort sort, Integer from, Integer size) {
+        log.debug("A list of events is requested with the following pagination parameters: from={} and size={}.", from, size);
+
+        Pageable page = PageRequest.of(from / size, size, SORT_BY_DATE);
+
+        QEvent qEvent = QEvent.event;
+
+        BooleanExpression expression = qEvent.state.eq(EventState.PUBLISHED);
+
+        if (text != null) {
+            expression = expression.and(qEvent.annotation.containsIgnoreCase(text).or(qEvent.description.containsIgnoreCase(text)));
+        }
+        if (categories != null) {
+            expression = expression.and(qEvent.category.id.in(categories));
+        }
+        if (paid != null) {
+            expression = expression.and(qEvent.paid.eq(paid));
+        }
+        if (rangeStart != null) {
+            expression = expression.and(qEvent.eventDate.after(rangeStart));
+        }
+        if (rangeEnd != null) {
+            expression = expression.and(qEvent.eventDate.before(rangeEnd));
+        }
+        if (onlyAvailable) {
+            //TODO
+        }
+
+        if (sort.equals(SearchSort.VIEWS)) {
+            page =  PageRequest.of(from / size, size, SORT_BY_VIEWS);
+        }
+
+        List<Event> foundEvents = repository.findAll(expression, page).getContent();
+
+        foundEvents = foundEvents
+                .stream()
+                .filter(event -> event.getParticipantLimit().equals(0) ||
+                        (event.getParticipantLimit()- event.getViews()) > 0)
+                .collect(Collectors.toList());
+
+        log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
+        return foundEvents
+                .stream()
+                .map(mapper::toEventResponse)
+                .collect(Collectors.toList());
+    }
 
     @Override
     public Event getEventById(Long eventId) {
         log.debug("Event with id={} is requested.", eventId);
 
-        Event foundEvent = repository.findById(eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        // TODO
+        Event foundEvent = repository.findEventByIdAndState(eventId, EventState.PUBLISHED).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
 
         foundEvent.setViews(foundEvent.getViews() + 1);
 

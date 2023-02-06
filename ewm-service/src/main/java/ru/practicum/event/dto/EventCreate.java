@@ -35,7 +35,6 @@ public class EventCreate {
     private Long category;
 
     @NotNull(message = "Event date should not be Null")
-    @Future(message = "Event date should be in the future")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
 

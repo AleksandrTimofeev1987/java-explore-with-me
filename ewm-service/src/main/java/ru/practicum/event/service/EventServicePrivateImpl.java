@@ -19,7 +19,6 @@ import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepositoryPrivate;
 import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
-import ru.practicum.exception.model.ForbiddenException;
 import ru.practicum.exception.model.NotFoundException;
 import ru.practicum.request.dto.RequestResponse;
 import ru.practicum.request.entity.Request;
@@ -106,7 +105,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         }
 
         if (savedEvent.getState().equals(EventState.PUBLISHED)) {
-            throw new ForbiddenException("Only pending or canceled events can be changed");
+            throw new ConflictException("Only pending or canceled events can be changed");
         }
 
         Event updatedEvent;
@@ -191,7 +190,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
 
     private RequestStatusUpdateResponse confirmRequests(List<Request> requestsForUpdate, Event event) {
         RequestStatusUpdateResponse result = new RequestStatusUpdateResponse(new ArrayList<>(), new ArrayList<>());
-        boolean isParticipationLimitReached = false;
+//        boolean isParticipationLimitReached = false;
 
         for (Request request : requestsForUpdate) {
             try {
@@ -201,17 +200,13 @@ public class EventServicePrivateImpl implements EventServicePrivate {
             } catch (ConflictException e) {
                 continue;
             }
-
-            if (isParticipationLimitReached) {
-                Request rejectedRequest = setRequestRejectedStatus(request);
-                result.getRejectedRequests().add(requestMapper.toRequestResponse(rejectedRequest));
-                continue;
-            }
+//
+//            if (isParticipationLimitReached) {
+//                throw new ConflictException(String.format("Cannon confirm request id=%d as event with id=%d participant limit is reached", request.getId(), event.getId()));
+//            }
 
             if (event.getParticipantLimit() - event.getConfirmedRequests() <= 0) {
-                isParticipationLimitReached = true;
-                Request rejectedRequest = setRequestRejectedStatus(request);
-                result.getRejectedRequests().add(requestMapper.toRequestResponse(rejectedRequest));
+                throw new ConflictException(String.format("Cannon confirm request id=%d as event with id=%d participant limit is reached", request.getId(), event.getId()));
             } else {
                 request.setStatus(RequestStatus.CONFIRMED);
                 Request confirmedRequest = requestRepository.save(request);
@@ -227,12 +222,8 @@ public class EventServicePrivateImpl implements EventServicePrivate {
         RequestStatusUpdateResponse result = new RequestStatusUpdateResponse(new ArrayList<>(), new ArrayList<>());
 
         for (Request request : requestsForUpdate) {
-            try {
-                if (!request.getStatus().equals(RequestStatus.PENDING)) {
-                    throw new ConflictException(String.format("Request with id=%d status is not PENDING", request.getId()));
-                }
-            } catch (ConflictException e) {
-                continue;
+            if (!request.getStatus().equals(RequestStatus.PENDING)) {
+                throw new ConflictException(String.format("Request with id=%d status is not PENDING", request.getId()));
             }
 
             Request rejectedRequest = setRequestRejectedStatus(request);
@@ -292,7 +283,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
     private void validateEventDate(LocalDateTime eventDate) {
         LocalDateTime verificationDate = LocalDateTime.now().plusHours(2);
         if (eventDate.isBefore(verificationDate)) {
-            throw new ForbiddenException("Event date should be at least two hours from now in the future");
+            throw new ConflictException("Event date should be at least two hours from now in the future");
         }
     }
 

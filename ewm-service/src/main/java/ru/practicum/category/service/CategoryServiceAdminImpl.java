@@ -44,6 +44,8 @@ public class CategoryServiceAdminImpl implements CategoryServiceAdmin {
             repository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
             throw new NotFoundException(String.format("Category with id=%d is not found", id));
+        } catch (DataIntegrityViolationException e) {
+            throw new ConflictException("Cannot delete category used in events");
         }
 
         log.debug("Category with ID={} is deleted from repository.", id);
