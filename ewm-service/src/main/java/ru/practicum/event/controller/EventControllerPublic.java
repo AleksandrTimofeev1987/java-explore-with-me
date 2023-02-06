@@ -36,8 +36,13 @@ public class EventControllerPublic {
                                          @RequestParam(required = false, defaultValue = "false") Boolean onlyAvailable,
                                          @RequestParam(required = false, defaultValue = "EVENT_DATE") SearchSort sort,
                                          @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                         @Positive @RequestParam(defaultValue = "10") Integer size) {
+                                         @Positive @RequestParam(defaultValue = "10") Integer size,
+                                         HttpServletRequest request) {
         log.debug("Getting events");
+
+        EndpointHitCreate hit = buildEndpointHit(request);
+        client.createHit(hit);
+
         return service.getEvents(text, categories, paid, rangeStart, rangeEnd, onlyAvailable, sort, from, size);
     }
 
