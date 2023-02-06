@@ -14,10 +14,8 @@ import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
-import ru.practicum.event.entity.Location;
 import ru.practicum.event.entity.QEvent;
 import ru.practicum.event.repository.EventRepository;
-import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
@@ -32,8 +30,6 @@ public class EventServiceAdminImpl implements EventServiceAdmin {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final EventRepository eventRepository;
     private final CategoryRepository categoryRepository;
-    private final LocationRepository locationRepository;
-
 
     @Override
     public List<Event> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
@@ -107,8 +103,7 @@ public class EventServiceAdminImpl implements EventServiceAdmin {
             event.setEventDate(eventDto.getEventDate());
         }
         if (eventDto.getLocation() != null) {
-            Location location = locationRepository.save(eventDto.getLocation());
-            event.setLocation(location);
+            event.setLocation(event.getLocation());
         }
         if (eventDto.getPaid() != null) {
             event.setPaid(eventDto.getPaid());

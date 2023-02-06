@@ -15,10 +15,8 @@ import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
-import ru.practicum.event.entity.Location;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
-import ru.practicum.event.repository.LocationRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 import ru.practicum.request.dto.RequestResponse;
@@ -43,7 +41,6 @@ public class EventServicePrivateImpl implements EventServicePrivate {
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
-    private final LocationRepository locationRepository;
     private final RequestRepository requestRepository;
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
@@ -156,13 +153,12 @@ public class EventServicePrivateImpl implements EventServicePrivate {
     private Event buildNewEvent(Long userId, EventCreate eventDto) {
         Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", eventDto.getCategory())));
         User initiator = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(String.format("User with id=%d is not found", userId)));
-        Location location = locationRepository.save(eventDto.getLocation());
 
         Event event = eventMapper.toEventEntity(userId, eventDto);
 
         event.setCategory(category);
         event.setInitiator(initiator);
-        event.setLocation(location);
+        event.setLocation(eventDto.getLocation());
         if (event.getPaid() == null) {
             event.setPaid(false);
         }
@@ -190,7 +186,6 @@ public class EventServicePrivateImpl implements EventServicePrivate {
 
     private RequestStatusUpdateResponse confirmRequests(List<Request> requestsForUpdate, Event event) {
         RequestStatusUpdateResponse result = new RequestStatusUpdateResponse(new ArrayList<>(), new ArrayList<>());
-//        boolean isParticipationLimitReached = false;
 
         for (Request request : requestsForUpdate) {
             try {
@@ -200,10 +195,6 @@ public class EventServicePrivateImpl implements EventServicePrivate {
             } catch (ConflictException e) {
                 continue;
             }
-//
-//            if (isParticipationLimitReached) {
-//                throw new ConflictException(String.format("Cannon confirm request id=%d as event with id=%d participant limit is reached", request.getId(), event.getId()));
-//            }
 
             if (event.getParticipantLimit() - event.getConfirmedRequests() <= 0) {
                 throw new ConflictException(String.format("Cannon confirm request id=%d as event with id=%d participant limit is reached", request.getId(), event.getId()));
@@ -255,8 +246,7 @@ public class EventServicePrivateImpl implements EventServicePrivate {
             event.setEventDate(eventDto.getEventDate());
         }
         if (eventDto.getLocation() != null) {
-            Location location = locationRepository.save(eventDto.getLocation());
-            event.setLocation(location);
+            event.setLocation(event.getLocation());
         }
         if (eventDto.getPaid() != null) {
             event.setPaid(eventDto.getPaid());
