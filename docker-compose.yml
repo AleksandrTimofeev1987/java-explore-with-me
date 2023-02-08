@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   stats-server:
-    #    build: /stats-server (for Windows start)
+#   build: /stats-server (for Windows start)
     build: ./stats-server
     image: stats-server
     restart: on-failure
@@ -11,7 +11,6 @@ services:
     depends_on:
       - stats-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://stats-db:5432/ewm_stats
       - DB_NAME=ewm_stats
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
@@ -31,7 +30,7 @@ services:
       - POSTGRES_PASSWORD=test
 
   ewm-service:
-    #    build: /ewm-service (for Windows start)
+#   build: /ewm-service (for Windows start)
     build: ./ewm-service
     image: ewm-service
     restart: on-failure
@@ -41,7 +40,6 @@ services:
     depends_on:
       - ewm-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/ewm_main
       - DB_NAME=ewm_main
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
