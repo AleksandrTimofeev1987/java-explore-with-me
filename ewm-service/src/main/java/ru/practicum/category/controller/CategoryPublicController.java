@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.category.dto.CategoryResponse;
-import ru.practicum.category.service.CategoryServicePublic;
+import ru.practicum.category.service.CategoryPublicService;
 
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class CategoryControllerPublic {
+public class CategoryPublicController {
 
-    private final CategoryServicePublic service;
+    private final CategoryPublicService service;
 
     @GetMapping
     public List<CategoryResponse> getCategories(@PositiveOrZero @RequestParam(defaultValue = "0") Integer from,

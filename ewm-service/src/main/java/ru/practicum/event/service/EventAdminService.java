@@ -7,7 +7,7 @@ import ru.practicum.event.entity.EventState;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface EventServiceAdmin {
+public interface EventAdminService {
 
     /**
      * Method gets all events falling under specified filters.

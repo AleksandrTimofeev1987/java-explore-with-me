@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class EventServicePublicImpl implements EventServicePublic {
+public class EventPublicServiceImpl implements EventPublicService {
 
     private static final Sort SORT_BY_DATE = Sort.by(Sort.Direction.ASC, "eventDate");
     private static final Sort SORT_BY_VIEWS = Sort.by(Sort.Direction.ASC, "views");

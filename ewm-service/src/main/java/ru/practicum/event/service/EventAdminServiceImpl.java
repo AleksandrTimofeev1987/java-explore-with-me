@@ -25,7 +25,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class EventServiceAdminImpl implements EventServiceAdmin {
+public class EventAdminServiceImpl implements EventAdminService {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final EventRepository eventRepository;

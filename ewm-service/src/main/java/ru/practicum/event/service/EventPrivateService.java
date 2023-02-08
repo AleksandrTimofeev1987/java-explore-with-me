@@ -6,7 +6,7 @@ import ru.practicum.request.dto.RequestResponse;
 
 import java.util.List;
 
-public interface EventServicePrivate {
+public interface EventPrivateService {
 
     /**
      * Method gets all events initiated by user from repository.

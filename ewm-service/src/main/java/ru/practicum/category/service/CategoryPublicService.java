@@ -4,7 +4,7 @@ import ru.practicum.category.dto.CategoryResponse;
 
 import java.util.List;
 
-public interface CategoryServicePublic {
+public interface CategoryPublicService {
 
     /**
      * Method returns all categories paginated.

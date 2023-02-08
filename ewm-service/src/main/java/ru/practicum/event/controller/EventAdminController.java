@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
-import ru.practicum.event.service.EventServiceAdmin;
+import ru.practicum.event.service.EventAdminService;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
@@ -21,9 +21,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class EventControllerAdmin {
+public class EventAdminController {
 
-    private final EventServiceAdmin service;
+    private final EventAdminService service;
 
     @GetMapping
     public List<Event> getEvents(@RequestParam(required = false) Long[] users,

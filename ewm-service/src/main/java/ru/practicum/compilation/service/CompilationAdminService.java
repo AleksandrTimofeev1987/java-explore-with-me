@@ -4,7 +4,7 @@ import ru.practicum.compilation.dto.CompilationCreate;
 import ru.practicum.compilation.dto.CompilationResponse;
 import ru.practicum.compilation.dto.CompilationUpdate;
 
-public interface CompilationServiceAdmin {
+public interface CompilationAdminService {
 
     /**
      * Method adds compilation to repository.

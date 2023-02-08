@@ -9,7 +9,7 @@ import ru.practicum.client.EndpointHitClient;
 import ru.practicum.dto.EndpointHitCreate;
 import ru.practicum.event.dto.EventResponse;
 import ru.practicum.event.entity.Event;
-import ru.practicum.event.service.EventServicePublic;
+import ru.practicum.event.service.EventPublicService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.Positive;
@@ -22,9 +22,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class EventControllerPublic {
+public class EventPublicController {
 
-    private final EventServicePublic service;
+    private final EventPublicService service;
     private final EndpointHitClient client;
 
     @GetMapping

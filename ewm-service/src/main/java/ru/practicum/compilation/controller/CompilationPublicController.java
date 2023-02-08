@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.compilation.dto.CompilationResponse;
-import ru.practicum.compilation.service.CompilationServicePublic;
+import ru.practicum.compilation.service.CompilationPublicService;
 
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class CompilationControllerPublic {
+public class CompilationPublicController {
 
-    private final CompilationServicePublic service;
+    private final CompilationPublicService service;
 
     @GetMapping
     public List<CompilationResponse> getCompilations(@RequestParam(required = false) Boolean pinned,

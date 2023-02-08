@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CategoryServicePublicImpl implements CategoryServicePublic {
+public class CategoryPublicServiceImpl implements CategoryPublicService {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final CategoryRepository repository;

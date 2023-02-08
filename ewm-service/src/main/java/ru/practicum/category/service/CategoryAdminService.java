@@ -4,7 +4,7 @@ import ru.practicum.category.dto.CategoryResponse;
 import ru.practicum.category.dto.CategoryUpdate;
 import ru.practicum.category.entity.Category;
 
-public interface CategoryServiceAdmin {
+public interface CategoryAdminService {
 
     /**
      * Method adds category to repository.

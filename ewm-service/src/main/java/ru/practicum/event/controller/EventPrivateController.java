@@ -7,7 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
-import ru.practicum.event.service.EventServicePrivate;
+import ru.practicum.event.service.EventPrivateService;
 import ru.practicum.request.dto.RequestResponse;
 
 import javax.validation.Valid;
@@ -20,9 +20,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class EventControllerPrivate {
+public class EventPrivateController {
 
-    private final EventServicePrivate service;
+    private final EventPrivateService service;
 
     @GetMapping
     public List<EventResponse> getEvents(@PathVariable Long userId,

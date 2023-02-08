@@ -22,7 +22,7 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CompilationServiceIAdminImpl implements CompilationServiceAdmin {
+public class CompilationIAdminServiceImpl implements CompilationAdminService {
 
     private final CompilationRepository compRepository;
     private final EventRepository eventRepository;

@@ -4,7 +4,7 @@ import ru.practicum.compilation.dto.CompilationResponse;
 
 import java.util.List;
 
-public interface CompilationServicePublic {
+public interface CompilationPublicService {
 
     /**
      * Method returns all compilations (if no requirements) or select pinned/unpinned compilations.

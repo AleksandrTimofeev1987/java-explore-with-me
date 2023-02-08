@@ -16,7 +16,7 @@ import ru.practicum.exception.model.NotFoundException;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CategoryServiceAdminImpl implements CategoryServiceAdmin {
+public class CategoryAdminServiceImpl implements CategoryAdminService {
 
     private final CategoryRepository repository;
     private final CategoryMapper mapper;

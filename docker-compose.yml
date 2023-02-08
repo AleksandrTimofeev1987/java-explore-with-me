@@ -2,7 +2,7 @@ version: '3.8'
 services:
   stats-server:
 #   build: /stats-server (for Windows start)
-    build: ./stats-server
+    build: /stats-server
     image: stats-server
     restart: on-failure
     container_name: ewm-stats-server
@@ -31,7 +31,7 @@ services:
 
   ewm-service:
 #   build: /ewm-service (for Windows start)
-    build: ./ewm-service
+    build: /ewm-service
     image: ewm-service
     restart: on-failure
     container_name: ewm-service

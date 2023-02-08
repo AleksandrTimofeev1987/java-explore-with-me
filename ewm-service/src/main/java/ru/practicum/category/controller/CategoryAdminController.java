@@ -10,7 +10,7 @@ import ru.practicum.category.dto.CategoryResponse;
 import ru.practicum.category.dto.CategoryUpdate;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.mapper.CategoryMapper;
-import ru.practicum.category.service.CategoryServiceAdminImpl;
+import ru.practicum.category.service.CategoryAdminServiceImpl;
 import ru.practicum.exception.model.BadRequestException;
 
 import javax.validation.Valid;
@@ -22,9 +22,9 @@ import javax.validation.constraints.Positive;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class CategoryControllerAdmin {
+public class CategoryAdminController {
 
-    private final CategoryServiceAdminImpl service;
+    private final CategoryAdminServiceImpl service;
     private final CategoryMapper mapper;
 
     @PostMapping
