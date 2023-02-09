@@ -2,6 +2,7 @@ package ru.practicum.request.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +33,7 @@ public class RequestServiceImpl implements RequestService {
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final RequestMapper requestMapper;
+    private final MessageSource messageSource;
 
     @Override
     public List<RequestResponse> getRequests(Long userId) {
@@ -70,10 +72,10 @@ public class RequestServiceImpl implements RequestService {
         log.debug("Request to cancel request with id={} is received from user with id={}.", requestId, userId);
         verifyUserExists(userId);
 
-        Request requestToCancel = requestRepository.findById(requestId).orElseThrow(() -> new NotFoundException(String.format("Request with id=%d is not found", requestId)));
+        Request requestToCancel = requestRepository.findById(requestId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("request.not_found", new Object[] {requestId}, null)));
 
         if (requestToCancel.getStatus().equals(RequestStatus.CANCELED)) {
-            throw new ForbiddenException(String.format("Request with is=%d is already cancelled", requestId));
+            throw new ForbiddenException(messageSource.getMessage("request.already_canceled", new Object[] {requestId}, null));
         }
 
         verifyUserCreatedRequest(userId, requestToCancel);
@@ -81,7 +83,7 @@ public class RequestServiceImpl implements RequestService {
         requestToCancel.setStatus(RequestStatus.CANCELED);
 
         Request cancelledRequest = requestRepository.save(requestToCancel);
-        Event event = eventRepository.findById(cancelledRequest.getEvent().getId()).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", cancelledRequest.getEvent().getId())));
+        Event event = eventRepository.findById(cancelledRequest.getEvent().getId()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {cancelledRequest.getEvent().getId()}, null)));
         if (event.getConfirmedRequests() > 0) {
             eventRepository.setEventConfirmedRequests(cancelledRequest.getEvent().getId(), event.getConfirmedRequests() - 1);
         }
@@ -91,8 +93,8 @@ public class RequestServiceImpl implements RequestService {
     }
 
     private Request buildNewRequest(Long userId, Long eventId) {
-        User requester = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(String.format("User with id=%d is not found", userId)));
-        Event event = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        User requester = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("user.not_found", new Object[] {userId}, null)));
+        Event event = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
 
         Request request = new Request();
         request.setRequester(requester);
@@ -111,41 +113,41 @@ public class RequestServiceImpl implements RequestService {
 
     private void verifyUserExists(Long userId) {
         if (!userRepository.existsById(userId)) {
-            throw new NotFoundException(String.format("User with id=%d is not found", userId));
+            throw new NotFoundException(messageSource.getMessage("user.not_found", new Object[] {userId}, null));
         }
     }
 
     private void verifyEventExists(Long eventId) {
         if (!eventRepository.existsById(eventId)) {
-            throw new NotFoundException(String.format("Event with id=%d is not found", eventId));
+            throw new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null));
         }
     }
 
     private void verifyNoPriorRequests(Long userId, Long eventId) {
         if (requestRepository.findRequestByRequesterIdAndEventId(userId, eventId).isPresent()) {
-            throw new ConflictException("Repeated request is prohibited");
+            throw new ConflictException(messageSource.getMessage("request.repeated", null, null));
         }
     }
 
     private void verifyNotInitiator(Long userId, Long eventId) {
         if (eventRepository.findEventByInitiatorIdAndId(userId, eventId).isPresent()) {
-            throw new ConflictException("Initiator cannot add request to its' event");
+            throw new ConflictException(messageSource.getMessage("request.requester_is_initiator", null, null));
         }
     }
 
     private void verifyEventPublishedAndHasSlots(Long eventId) {
         Event event = eventRepository.findById(eventId).get();
         if (!event.getState().equals(EventState.PUBLISHED)) {
-            throw new ConflictException("Cannot participate in unpublished event");
+            throw new ConflictException(messageSource.getMessage("event.request.unpublished", null, null));
         }
         if (event.getParticipantLimit() != 0 && (event.getParticipantLimit() - event.getConfirmedRequests()) <= 0) {
-            throw new ConflictException("The limit of participants is reached");
+            throw new ConflictException(messageSource.getMessage("event.request.limit_reached", null, null));
         }
     }
 
     private void verifyUserCreatedRequest(Long userId, Request request) {
         if (!request.getRequester().getId().equals(userId)) {
-            throw new ForbiddenException(String.format("Request with id=%d was not created by user with id=%d", request.getId(), userId));
+            throw new ForbiddenException(messageSource.getMessage("user.request.not_requester", new Object[] {request.getId(), userId}, null));
         }
     }
 }

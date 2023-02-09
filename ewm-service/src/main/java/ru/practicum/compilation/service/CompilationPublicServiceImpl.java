@@ -4,6 +4,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -26,6 +27,7 @@ public class CompilationPublicServiceImpl implements CompilationPublicService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final CompilationRepository repository;
     private final CompilationMapper mapper;
+    private final MessageSource messageSource;
 
     @Override
     public List<CompilationResponse> getCompilations(Boolean pinned, Integer from, Integer size) {
@@ -53,7 +55,7 @@ public class CompilationPublicServiceImpl implements CompilationPublicService {
     @Override
     public CompilationResponse getCompilationById(Long compId) {
         log.debug("Compilation with compId={} is requested.", compId);
-        Compilation foundCompilation = repository.findById(compId).orElseThrow(() -> new NotFoundException(String.format("Compilation with id=%d is not found", compId)));
+        Compilation foundCompilation = repository.findById(compId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("compilation.not_found", new Object[] {compId}, null)));
         log.debug("Compilation with id={} is received from repository.", compId);
         return mapper.toCompilationResponse(foundCompilation);
     }

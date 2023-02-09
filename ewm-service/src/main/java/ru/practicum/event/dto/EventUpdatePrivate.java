@@ -19,16 +19,16 @@ public class EventUpdatePrivate {
     @Null
     private Long id;
 
-    @Size(min = 3, max = 120, message = "Event title length should be from 3 to 120 characters")
+    @Size(min = 3, max = 120, message = "{title.event.length}")
     private String title;
 
-    @Size(min = 20, max = 2000, message = "Event annotation length should be from 20 to 2000 characters")
+    @Size(min = 20, max = 2000, message = "{annotation.event.length}")
     private String annotation;
 
-    @Size(min = 20, max = 7000, message = "Event description length should be from 20 to 7000 characters")
+    @Size(min = 20, max = 7000, message = "{description.event.length}")
     private String description;
 
-    @Positive(message = "Event category reference should be a positive number")
+    @Positive(message = "{category.event.positive}")
     private Long category;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
@@ -38,7 +38,7 @@ public class EventUpdatePrivate {
 
     private Boolean paid;
 
-    @PositiveOrZero(message = "Event participant limit should be 0 or more")
+    @PositiveOrZero(message = "{participant_limit.event.positive_or_zero}")
     private Integer participantLimit;
 
     private Boolean requestModeration;

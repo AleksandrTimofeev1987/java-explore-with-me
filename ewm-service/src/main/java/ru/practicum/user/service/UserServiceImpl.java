@@ -4,6 +4,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final UserRepository repository;
     private final UserMapper mapper;
+    private final MessageSource messageSource;
 
 
     @Override
@@ -65,7 +67,7 @@ public class UserServiceImpl implements UserService {
         try {
             createdUser = repository.save(user);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("User email is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("email.user.duplicate", null, null));
         }
 
         log.debug("User with ID={} is added to repository.", createdUser.getId());
@@ -79,7 +81,7 @@ public class UserServiceImpl implements UserService {
         try {
             repository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
-            throw new NotFoundException(String.format("User with id: %d is not found", id));
+            throw new NotFoundException(messageSource.getMessage("user.not_found", new Object[] {id}, null));
         }
 
         log.debug("User with ID={} is deleted from repository.", id);

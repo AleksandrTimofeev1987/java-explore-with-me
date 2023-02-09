@@ -4,6 +4,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Expressions;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -30,6 +31,7 @@ public class EventAdminServiceImpl implements EventAdminService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final EventRepository eventRepository;
     private final CategoryRepository categoryRepository;
+    private final MessageSource messageSource;
 
     @Override
     public List<Event> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
@@ -73,13 +75,13 @@ public class EventAdminServiceImpl implements EventAdminService {
             validateEventDate(eventDto.getEventDate());
         }
 
-        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
 
         Event updatedEvent;
         try {
             updatedEvent = eventRepository.save(formEventForUpdate(eventDto, savedEvent));
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Event title is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
         log.debug("Event with ID={} is updated.", eventId);
         return updatedEvent;
@@ -96,7 +98,7 @@ public class EventAdminServiceImpl implements EventAdminService {
             event.setDescription(eventDto.getDescription());
         }
         if (eventDto.getCategory() != null) {
-            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", eventDto.getCategory())));
+            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[] {eventDto.getCategory()}, null)));
             event.setCategory(category);
         }
         if (eventDto.getEventDate() != null) {
@@ -117,29 +119,36 @@ public class EventAdminServiceImpl implements EventAdminService {
 
         switch (eventDto.getStateAction()) {
             case PUBLISH_EVENT:
-                if (event.getState().equals(EventState.PENDING)) {
-                    event.setState(EventState.PUBLISHED);
-                    event.setPublishedOn(LocalDateTime.now());
-                } else {
-                    throw new ConflictException("Event can be published only if its' current state is PENDING");
-                }
+                setEventStatusPublished(event);
                 break;
             case REJECT_EVENT:
-                if (event.getState().equals(EventState.PENDING)) {
-                    event.setState(EventState.CANCELED);
-                } else {
-                    throw new ConflictException("Event can be rejected only if its' current state is PENDING");
-                }
+                setEventStatusCanceled(event);
                 break;
-
         }
         return event;
+    }
+
+    private void setEventStatusPublished(Event event) {
+        if (event.getState().equals(EventState.PENDING)) {
+            event.setState(EventState.PUBLISHED);
+            event.setPublishedOn(LocalDateTime.now());
+        } else {
+            throw new ConflictException(messageSource.getMessage("state.event.publish.not_pending", null, null));
+        }
+    }
+
+    private void setEventStatusCanceled(Event event) {
+        if (event.getState().equals(EventState.PENDING)) {
+            event.setState(EventState.CANCELED);
+        } else {
+            throw new ConflictException(messageSource.getMessage("state.event.cancel.not_pending", null, null));
+        }
     }
 
     private void validateEventDate(LocalDateTime eventDate) {
         LocalDateTime verificationDate = LocalDateTime.now().plusHours(2);
         if (eventDate.isBefore(verificationDate)) {
-            throw new ConflictException("Event date should be at least two hours from now in the future");
+            throw new ConflictException(messageSource.getMessage("date.event.not_valid", null, null));
         }
     }
 }

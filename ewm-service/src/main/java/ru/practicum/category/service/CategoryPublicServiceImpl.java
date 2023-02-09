@@ -2,6 +2,7 @@ package ru.practicum.category.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -23,6 +24,7 @@ public class CategoryPublicServiceImpl implements CategoryPublicService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final CategoryRepository repository;
     private final CategoryMapper mapper;
+    private final MessageSource messageSource;
 
     @Override
     public List<CategoryResponse> getCategories(Integer from, Integer size) {
@@ -41,7 +43,7 @@ public class CategoryPublicServiceImpl implements CategoryPublicService {
     @Override
     public CategoryResponse getCategoryById(Long catId) {
         log.debug("Category with id={} is requested.", catId);
-        Category foundCategory = repository.findById(catId).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", catId)));
+        Category foundCategory = repository.findById(catId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[] {catId}, null)));
         log.debug("Category with id={} is received from repository.", catId);
         return mapper.toCategoryResponseDto(foundCategory);
     }

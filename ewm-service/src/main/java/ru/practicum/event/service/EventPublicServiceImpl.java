@@ -3,6 +3,7 @@ package ru.practicum.event.service;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -29,6 +30,7 @@ public class EventPublicServiceImpl implements EventPublicService {
     private static final Sort SORT_BY_VIEWS = Sort.by(Sort.Direction.ASC, "views");
     private final EventRepository repository;
     private final EventMapper mapper;
+    private final MessageSource messageSource;
 
     @Override
     public List<EventResponse> getEvents(String text, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd, Boolean onlyAvailable, SearchSort sort, Integer from, Integer size) {
@@ -42,26 +44,22 @@ public class EventPublicServiceImpl implements EventPublicService {
             page = PageRequest.of(from / size, size, SORT_BY_VIEWS);
         }
 
-        List<Event> foundEvents = repository.findAll(expression, page).getContent();
-
-        foundEvents = foundEvents
+        List<EventResponse> foundEvents = repository.findAll(expression, page).getContent()
                 .stream()
                 .filter(event -> event.getParticipantLimit().equals(0) ||
                         (event.getParticipantLimit() - event.getViews()) > 0)
+                .map(mapper::toEventResponse)
                 .collect(Collectors.toList());
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return foundEvents
-                .stream()
-                .map(mapper::toEventResponse)
-                .collect(Collectors.toList());
+        return foundEvents;
     }
 
     @Override
     public Event getEventById(Long eventId) {
         log.debug("Event with id={} is requested.", eventId);
 
-        Event foundEvent = repository.findEventByIdAndState(eventId, EventState.PUBLISHED).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        Event foundEvent = repository.findEventByIdAndState(eventId, EventState.PUBLISHED).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
 
         foundEvent.setViews(foundEvent.getViews() + 1);
 

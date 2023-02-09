@@ -12,12 +12,12 @@ import javax.validation.constraints.NotNull;
 @Valid
 public class CompilationCreate {
 
-    @NotBlank(message = "Compilation title should not be Null or Blank")
+    @NotBlank(message = "{title.compilation.not_blank}")
     private String title;
 
-    @NotNull(message = "Events should not be Null")
+    @NotNull(message = "{events.compilation.not_null}")
     private Long[] events;
 
-    @NotNull(message = "Pinned should not be Null")
+    @NotNull(message = "{pinned.compilation.not_null}")
     private Boolean pinned;
 }

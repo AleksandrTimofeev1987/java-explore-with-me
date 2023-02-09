@@ -2,6 +2,7 @@ package ru.practicum.category.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class CategoryAdminServiceImpl implements CategoryAdminService {
 
     private final CategoryRepository repository;
     private final CategoryMapper mapper;
+    private final MessageSource messageSource;
 
     @Override
     public CategoryResponse createCategory(Category category) {
@@ -29,7 +31,7 @@ public class CategoryAdminServiceImpl implements CategoryAdminService {
         try {
             createdCategory = repository.save(category);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Category name is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("name.category.duplicate", null, null));
         }
 
         log.debug("Category with ID={} is added to repository.", createdCategory.getId());
@@ -43,9 +45,9 @@ public class CategoryAdminServiceImpl implements CategoryAdminService {
         try {
             repository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
-            throw new NotFoundException(String.format("Category with id=%d is not found", id));
+            throw new NotFoundException(String.format(messageSource.getMessage("category.not_found", new Object[] {id}, null)));
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Cannot delete category used in events");
+            throw new ConflictException(messageSource.getMessage("category.delete.used_in_events", new Object[] {id}, null));
         }
 
         log.debug("Category with ID={} is deleted from repository.", id);
@@ -54,14 +56,14 @@ public class CategoryAdminServiceImpl implements CategoryAdminService {
     @Override
     public CategoryResponse updateCategory(Long id, CategoryUpdate categoryDto) {
         log.debug("Request to update category with ID={} is received.", id);
-        Category categoryForUpdate = repository.findById(id).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", id)));
+        Category categoryForUpdate = repository.findById(id).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[] {id}, null)));
         mapper.toCategoryFromCategoryUpdate(categoryDto, categoryForUpdate);
 
         Category updatedCategory;
         try {
             updatedCategory = repository.save(categoryForUpdate);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Category name is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("name.category.duplicate", null, null));
         }
 
         log.debug("Category with ID={} is updated in repository.", id);

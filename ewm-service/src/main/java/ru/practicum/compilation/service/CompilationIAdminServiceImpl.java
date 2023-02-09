@@ -2,6 +2,7 @@ package ru.practicum.compilation.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,7 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
     private final CompilationRepository compRepository;
     private final EventRepository eventRepository;
     private final CompilationMapper mapper;
+    private final MessageSource messageSource;
 
     @Override
     public CompilationResponse createCompilation(CompilationCreate compilationDto) {
@@ -38,7 +40,7 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
         try {
             createdCompilation = compRepository.save(compilation);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Compilation title is duplicate.");
+            throw new ConflictException(messageSource.getMessage("title.compilation.duplicate", null, null));
         }
 
         log.debug("Compilation with ID={} is added to repository.", createdCompilation.getId());
@@ -52,7 +54,7 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
         try {
             compRepository.deleteById(compId);
         } catch (EmptyResultDataAccessException e) {
-            throw new NotFoundException(String.format("Compilation with id: %d is not found", compId));
+            throw new NotFoundException(messageSource.getMessage("compilation.not_found", new Object[] {compId}, null));
         }
 
         log.debug("Compilation with id={} is deleted from repository.", compId);
@@ -61,7 +63,7 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
     @Override
     public CompilationResponse updateCompilation(Long compId, CompilationUpdate compilationDto) {
         log.debug("Request to update compilation with id={} is received.", compId);
-        Compilation savedCompilation = compRepository.findById(compId).orElseThrow(() -> new NotFoundException(String.format("Compilation with id=%d is not found", compId)));
+        Compilation savedCompilation = compRepository.findById(compId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("compilation.not_found", new Object[] {compId}, null)));
 
         Compilation compilationForUpdate = buildCompilationForUpdate(compilationDto, savedCompilation);
 
@@ -69,7 +71,7 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
         try {
             updatedCompilation = compRepository.save(compilationForUpdate);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Compilation name is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("title.compilation.duplicate", null, null));
         }
 
         log.debug("Compilation with id={} is updated in repository.", compId);

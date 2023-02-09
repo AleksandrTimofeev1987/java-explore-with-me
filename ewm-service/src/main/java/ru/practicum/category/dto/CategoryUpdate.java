@@ -15,6 +15,6 @@ public class CategoryUpdate {
     @Null
     private Long id;
 
-    @NotBlank(message = "Category name should not be Null or Blank")
+    @NotBlank(message = "{name.category.not_blank}")
     private String name;
 }

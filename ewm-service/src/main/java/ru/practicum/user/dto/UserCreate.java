@@ -14,10 +14,10 @@ public class UserCreate {
 
     private Long id;
 
-    @NotBlank(message = "User name should not be Null or Blank")
+    @NotBlank(message = "{name.user.not_blank}")
     private String name;
 
-    @Email(message = "User email should be valid")
-    @NotBlank (message = "User email should not be Null or Blank")
+    @Email(message = "{email.user.not_valid}")
+    @NotBlank (message = "{email.user.not_blank}")
     private String email;
 }

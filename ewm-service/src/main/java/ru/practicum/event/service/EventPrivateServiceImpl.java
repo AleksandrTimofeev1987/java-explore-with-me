@@ -3,6 +3,7 @@ package ru.practicum.event.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,7 +29,6 @@ import ru.practicum.user.entity.User;
 import ru.practicum.user.repository.UserRepository;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,6 +44,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private final RequestRepository requestRepository;
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
+    private final MessageSource messageSource;
 
     @Override
     public List<EventResponse> getEvents(Long userId, Integer from, Integer size) {
@@ -65,7 +66,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         log.debug("Event with id={} is requested by user with id={}.", eventId, userId);
         verifyUserExists(userId);
 
-        Event foundEvent = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        Event foundEvent = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
         log.debug("Event with id={} is received from repository.", eventId);
         return foundEvent;
     }
@@ -83,7 +84,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         try {
             createdEvent = eventRepository.save(event);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Event title is duplicate.");
+            throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
 
         log.debug("Event with ID={} is added to repository.", createdEvent.getId());
@@ -99,21 +100,21 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             validateEventDate(eventDto.getEventDate());
         }
 
-        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d is not found", eventId)));
+        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
 
         if (!savedEvent.getInitiator().getId().equals(userId)) {
-            throw new ConflictException(String.format("User with id=%d have not initiated event with id=%d is not found", userId, eventId));
+            throw new ConflictException(messageSource.getMessage("event.not_initiator", new Object[]{userId, eventId}, null));
         }
 
         if (savedEvent.getState().equals(EventState.PUBLISHED)) {
-            throw new ConflictException("Only pending or canceled events can be changed");
+            throw new ConflictException(messageSource.getMessage("state.event.change.not_pending_or_cancelled", null, null));
         }
 
         Event updatedEvent;
         try {
             updatedEvent = eventRepository.save(buildEventForUpdate(eventDto, savedEvent));
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Event title is a duplicate.");
+            throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
         log.debug("Event with ID={} is updated.", eventId);
         return updatedEvent;
@@ -140,7 +141,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         log.debug("A request to update requests for event with id={} initiated by user with id={} is received", eventId, userId);
         verifyUserExists(userId);
 
-        Event event = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(String.format("Event with id=%d initiated by user with id=%d is not found", eventId, userId)));
+        Event event = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found_by_initiator", new Object[]{eventId, userId}, null)));
 
         List<Request> requestsForUpdate = requestRepository.findRequestsForUpdate(eventId, updateDto.getRequestIds());
 
@@ -151,8 +152,8 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     }
 
     private Event buildNewEvent(Long userId, EventCreate eventDto) {
-        Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", eventDto.getCategory())));
-        User initiator = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(String.format("User with id=%d is not found", userId)));
+        Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[]{eventDto.getCategory()}, null)));
+        User initiator = userRepository.findById(userId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("user.not_found", new Object[]{userId}, null)));
 
         Event event = eventMapper.toEventEntity(userId, eventDto);
 
@@ -185,42 +186,53 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     }
 
     private RequestStatusUpdateResponse confirmRequests(List<Request> requestsForUpdate, Event event) {
-        RequestStatusUpdateResponse result = new RequestStatusUpdateResponse(new ArrayList<>(), new ArrayList<>());
+        RequestStatusUpdateResponse result = new RequestStatusUpdateResponse();
 
         for (Request request : requestsForUpdate) {
             try {
-                if (!request.getStatus().equals(RequestStatus.PENDING)) {
-                    throw new ConflictException(String.format("Request with id=%d status is not PENDING", request.getId()));
-                }
+                validateRequestStatusPending(request);
             } catch (ConflictException e) {
                 continue;
             }
 
             if (event.getParticipantLimit() - event.getConfirmedRequests() <= 0) {
-                throw new ConflictException(String.format("Cannon confirm request id=%d as event with id=%d participant limit is reached", request.getId(), event.getId()));
+                throw new ConflictException(messageSource.getMessage("event.confirm.participant_limit", new Object[] {request.getId(), event.getId()}, null));
             } else {
-                request.setStatus(RequestStatus.CONFIRMED);
-                Request confirmedRequest = requestRepository.save(request);
-                result.getConfirmedRequests().add(requestMapper.toRequestResponse(confirmedRequest));
-                event.setConfirmedRequests(event.getConfirmedRequests() + 1);
-                eventRepository.setEventConfirmedRequests(event.getId(), event.getConfirmedRequests());
+                confirmAndSaveRequest(result, request);
+                incrementEventConfirmedRequests(event);
             }
         }
+
         return result;
     }
 
+    private void confirmAndSaveRequest(RequestStatusUpdateResponse result, Request request) {
+        request.setStatus(RequestStatus.CONFIRMED);
+        Request confirmedRequest = requestRepository.save(request);
+        result.getConfirmedRequests().add(requestMapper.toRequestResponse(confirmedRequest));
+    }
+
+    private void incrementEventConfirmedRequests(Event event) {
+        event.setConfirmedRequests(event.getConfirmedRequests() + 1);
+        eventRepository.setEventConfirmedRequests(event.getId(), event.getConfirmedRequests());
+    }
+
     private RequestStatusUpdateResponse rejectRequests(List<Request> requestsForUpdate) {
-        RequestStatusUpdateResponse result = new RequestStatusUpdateResponse(new ArrayList<>(), new ArrayList<>());
+        RequestStatusUpdateResponse result = new RequestStatusUpdateResponse();
 
         for (Request request : requestsForUpdate) {
-            if (!request.getStatus().equals(RequestStatus.PENDING)) {
-                throw new ConflictException(String.format("Request with id=%d status is not PENDING", request.getId()));
-            }
+            validateRequestStatusPending(request);
 
             Request rejectedRequest = setRequestRejectedStatus(request);
             result.getRejectedRequests().add(requestMapper.toRequestResponse(rejectedRequest));
         }
         return result;
+    }
+
+    private void validateRequestStatusPending(Request request) throws ConflictException {
+        if (!request.getStatus().equals(RequestStatus.PENDING)) {
+            throw new ConflictException(messageSource.getMessage("status.request.confirm.not_pending", new Object[] {request.getId()}, null));
+        }
     }
 
     private Request setRequestRejectedStatus(Request request) {
@@ -239,7 +251,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             event.setDescription(eventDto.getDescription());
         }
         if (eventDto.getCategory() != null) {
-            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(String.format("Category with id=%d is not found", eventDto.getCategory())));
+            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[]{eventDto.getCategory()}, null)));
             event.setCategory(category);
         }
         if (eventDto.getEventDate() != null) {
@@ -273,19 +285,19 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private void validateEventDate(LocalDateTime eventDate) {
         LocalDateTime verificationDate = LocalDateTime.now().plusHours(2);
         if (eventDate.isBefore(verificationDate)) {
-            throw new ConflictException("Event date should be at least two hours from now in the future");
+            throw new ConflictException(messageSource.getMessage("date.event.not_valid", null, null));
         }
     }
 
     private void verifyUserExists(Long userId) {
         if (!userRepository.existsById(userId)) {
-            throw new NotFoundException(String.format("User with id=%d is not found", userId));
+            throw new NotFoundException(messageSource.getMessage("user.not_found", new Object[] {userId}, null));
         }
     }
 
     private void verifyEventExists(Long eventId) {
         if (!eventRepository.existsById(eventId)) {
-            throw new NotFoundException(String.format("Event with id=%d is not found", eventId));
+            throw new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null));
         }
     }
 }
