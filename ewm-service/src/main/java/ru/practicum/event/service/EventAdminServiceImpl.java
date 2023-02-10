@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.EventUpdateAdmin;
+import ru.practicum.event.dto.StateActionAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.QEvent;
@@ -22,6 +23,8 @@ import ru.practicum.exception.model.NotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +35,10 @@ public class EventAdminServiceImpl implements EventAdminService {
     private final EventRepository eventRepository;
     private final CategoryRepository categoryRepository;
     private final MessageSource messageSource;
+    Map<StateActionAdmin, Consumer<Event>> settingEventStatusMap = Map.of(
+            StateActionAdmin.PUBLISH_EVENT, this::setEventStatusPublished,
+            StateActionAdmin.REJECT_EVENT, this::setEventStatusCanceled
+    );
 
     @Override
     public List<Event> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
@@ -79,7 +86,7 @@ public class EventAdminServiceImpl implements EventAdminService {
 
         Event updatedEvent;
         try {
-            updatedEvent = eventRepository.save(formEventForUpdate(eventDto, savedEvent));
+            updatedEvent = eventRepository.save(buildEventForUpdate(eventDto, savedEvent));
         } catch (DataIntegrityViolationException e) {
             throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
@@ -87,7 +94,7 @@ public class EventAdminServiceImpl implements EventAdminService {
         return updatedEvent;
     }
 
-    private Event formEventForUpdate(EventUpdateAdmin eventDto, Event event) {
+    private Event buildEventForUpdate(EventUpdateAdmin eventDto, Event event) {
         if (eventDto.getTitle() != null) {
             event.setTitle(eventDto.getTitle());
         }
@@ -117,14 +124,8 @@ public class EventAdminServiceImpl implements EventAdminService {
             event.setRequestModeration(eventDto.getRequestModeration());
         }
 
-        switch (eventDto.getStateAction()) {
-            case PUBLISH_EVENT:
-                setEventStatusPublished(event);
-                break;
-            case REJECT_EVENT:
-                setEventStatusCanceled(event);
-                break;
-        }
+        settingEventStatusMap.get(eventDto.getStateAction()).accept(event);
+
         return event;
     }
 

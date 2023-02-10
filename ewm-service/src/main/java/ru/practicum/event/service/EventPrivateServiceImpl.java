@@ -30,6 +30,8 @@ import ru.practicum.user.repository.UserRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,6 +47,10 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
     private final MessageSource messageSource;
+    Map<StateActionPrivate, Consumer<Event>> settingEventStatusMap = Map.of(
+            StateActionPrivate.SEND_TO_REVIEW, event -> event.setState(EventState.PENDING),
+            StateActionPrivate.CANCEL_REVIEW, event -> event.setState(EventState.CANCELED)
+    );
 
     @Override
     public List<EventResponse> getEvents(Long userId, Integer from, Integer size) {
@@ -270,15 +276,8 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             event.setRequestModeration(eventDto.getRequestModeration());
         }
 
-        switch (eventDto.getStateAction()) {
-            case SEND_TO_REVIEW:
-                event.setState(EventState.PENDING);
-                break;
-            case CANCEL_REVIEW:
-                event.setState(EventState.CANCELED);
-                break;
+        settingEventStatusMap.get(eventDto.getStateAction()).accept(event);
 
-        }
         return event;
     }
 
