@@ -42,7 +42,7 @@ public class CategoryAdminController {
     }
 
     @PatchMapping("/{catId}")
-    public CategoryResponse updateItem(@Positive @PathVariable Long catId,
+    public CategoryResponse updateCategory(@Positive @PathVariable Long catId,
                                        @RequestBody @NotNull @Valid CategoryUpdate categoryDto) {
         log.debug("Updating category with id={}", catId);
         return service.updateCategory(catId, categoryDto);

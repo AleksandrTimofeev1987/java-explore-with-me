@@ -9,7 +9,7 @@ public interface RequestService {
     /**
      * Method gets request created by user.
      *
-     * @param userId ID of user adding request.
+     * @param userId ID of user who created requests.
      *
      * @return List of requests.
      */
