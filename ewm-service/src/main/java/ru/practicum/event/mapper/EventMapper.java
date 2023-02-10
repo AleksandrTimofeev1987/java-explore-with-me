@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import ru.practicum.category.entity.Category;
 import ru.practicum.event.dto.EventCreate;
 import ru.practicum.event.dto.EventResponse;
+import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.user.entity.User;
@@ -14,6 +15,8 @@ import java.time.LocalDateTime;
 public interface EventMapper {
 
     EventResponse toEventResponse(Event event);
+
+    EventResponseFull toEventResponseFull(Event event);
 
     default Event toEventEntity(Long userId, EventCreate eventDto) {
         if (eventDto == null) {

@@ -30,4 +30,7 @@ public class RateEvent {
     @Column(name = "event_rate", nullable = false)
     private Integer rate;
 
+    public Long getEventId() {
+        return event.getId();
+    }
 }

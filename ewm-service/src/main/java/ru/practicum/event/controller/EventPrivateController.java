@@ -33,7 +33,7 @@ public class EventPrivateController {
     }
 
     @GetMapping("/{eventId}")
-    public Event getEventById(@PathVariable Long userId,
+    public EventResponseFull getEventById(@PathVariable Long userId,
                               @PathVariable Long eventId) {
         log.debug("Getting event by ID");
         return service.getEventById(userId, eventId);

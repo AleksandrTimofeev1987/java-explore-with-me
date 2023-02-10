@@ -27,7 +27,7 @@ public interface EventPrivateService {
      *
      * @return Event initiated by user with correct ID.
      */
-    Event getEventById(Long userId, Long eventId);
+    EventResponseFull getEventById(Long userId, Long eventId);
 
     /**
      * Method adds event to repository.

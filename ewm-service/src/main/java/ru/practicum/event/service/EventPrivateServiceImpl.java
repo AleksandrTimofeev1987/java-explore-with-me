@@ -16,8 +16,10 @@ import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
+import ru.practicum.event.entity.RateEvent;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
+import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 import ru.practicum.request.dto.RequestResponse;
@@ -29,9 +31,11 @@ import ru.practicum.user.entity.User;
 import ru.practicum.user.repository.UserRepository;
 
 import java.time.LocalDateTime;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,6 +48,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final RequestRepository requestRepository;
+    private final RateEventRepository rateRepository;
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
     private final MessageSource messageSource;
@@ -61,20 +66,17 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         List<Event> foundEvents = eventRepository.findEventsByInitiatorId(userId, page);
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return foundEvents
-                .stream()
-                .map(eventMapper::toEventResponse)
-                .collect(Collectors.toList());
+        return buildEventResponses(foundEvents);
     }
 
     @Override
-    public Event getEventById(Long userId, Long eventId) {
+    public EventResponseFull getEventById(Long userId, Long eventId) {
         log.debug("Event with id={} is requested by user with id={}.", eventId, userId);
         verifyUserExists(userId);
 
-        Event foundEvent = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
+        Event foundEvent = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null)));
         log.debug("Event with id={} is received from repository.", eventId);
-        return foundEvent;
+        return buildFullEventResponse(foundEvent);
     }
 
     @Override
@@ -106,7 +108,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             validateEventDate(eventDto.getEventDate());
         }
 
-        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
+        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null)));
 
         if (!savedEvent.getInitiator().getId().equals(userId)) {
             throw new ConflictException(messageSource.getMessage("event.not_initiator", new Object[]{userId, eventId}, null));
@@ -202,7 +204,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             }
 
             if (event.getParticipantLimit() - event.getConfirmedRequests() <= 0) {
-                throw new ConflictException(messageSource.getMessage("event.confirm.participant_limit", new Object[] {request.getId(), event.getId()}, null));
+                throw new ConflictException(messageSource.getMessage("event.confirm.participant_limit", new Object[]{request.getId(), event.getId()}, null));
             } else {
                 confirmAndSaveRequest(result, request);
                 incrementEventConfirmedRequests(event);
@@ -235,9 +237,49 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         return result;
     }
 
+
+    private List<EventResponse> buildEventResponses(List<Event> foundEvents) {
+        List<EventResponse> eventResponses = foundEvents
+                .stream()
+                .map(eventMapper::toEventResponse)
+                .collect(Collectors.toList());
+
+        Map<Long, EventResponse> eventMap = eventResponses
+                .stream()
+                .collect(Collectors.toMap(EventResponse::getId, Function.identity()));
+
+        Map<Long, List<RateEvent>> eventsRates = rateRepository.findRateEventByEventId(eventMap.keySet())
+                .stream()
+                .collect(Collectors.groupingBy(RateEvent::getEventId));
+
+        if (!eventsRates.isEmpty()) {
+            eventResponses.forEach(event -> event
+                    .setRate(getEventRate(eventsRates.get(event.getId())
+                            .stream()
+                            .map(RateEvent::getRate)
+                            .collect(Collectors.toList()))));
+        }
+
+        return eventResponses;
+    }
+
+    private EventResponseFull buildFullEventResponse(Event foundEvent) {
+        EventResponseFull result = eventMapper.toEventResponseFull(foundEvent);
+
+        Double rate = rateRepository.calculateEventAverageRateById(foundEvent.getId());
+        result.setRate(rate);
+
+        return result;
+    }
+
+    private Double getEventRate(List<Integer> rates) {
+        IntSummaryStatistics iss = rates.stream().mapToInt(rate -> rate).summaryStatistics();
+        return iss.getAverage();
+    }
+
     private void validateRequestStatusPending(Request request) throws ConflictException {
         if (!request.getStatus().equals(RequestStatus.PENDING)) {
-            throw new ConflictException(messageSource.getMessage("status.request.confirm.not_pending", new Object[] {request.getId()}, null));
+            throw new ConflictException(messageSource.getMessage("status.request.confirm.not_pending", new Object[]{request.getId()}, null));
         }
     }
 
@@ -290,13 +332,13 @@ public class EventPrivateServiceImpl implements EventPrivateService {
 
     private void verifyUserExists(Long userId) {
         if (!userRepository.existsById(userId)) {
-            throw new NotFoundException(messageSource.getMessage("user.not_found", new Object[] {userId}, null));
+            throw new NotFoundException(messageSource.getMessage("user.not_found", new Object[]{userId}, null));
         }
     }
 
     private void verifyEventExists(Long eventId) {
         if (!eventRepository.existsById(eventId)) {
-            throw new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null));
+            throw new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null));
         }
     }
 }
