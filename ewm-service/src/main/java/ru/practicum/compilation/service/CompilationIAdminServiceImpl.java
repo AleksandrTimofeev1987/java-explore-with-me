@@ -12,17 +12,12 @@ import ru.practicum.compilation.dto.CompilationUpdate;
 import ru.practicum.compilation.entity.Compilation;
 import ru.practicum.compilation.mapper.CompilationMapper;
 import ru.practicum.compilation.repository.CompilationRepository;
-import ru.practicum.event.dto.EventIdAvRate;
-import ru.practicum.event.dto.EventResponseShort;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.repository.EventRepository;
-import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +26,6 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
 
     private final CompilationRepository compRepository;
     private final EventRepository eventRepository;
-    private final RateEventRepository rateRepository;
     private final CompilationMapper mapper;
     private final MessageSource messageSource;
 
@@ -112,21 +106,5 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
             savedCompilation.setPinned(compilationDto.getPinned());
         }
         return savedCompilation;
-    }
-
-    private List<EventResponseShort> buildEventResponses(List<EventResponseShort> events) {
-        Map<Long, EventResponseShort> eventMap = events
-                .stream()
-                .collect(Collectors.toMap(EventResponseShort::getId, Function.identity()));
-
-        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
-                .stream()
-                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
-
-        if (!eventsRates.isEmpty()) {
-            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
-        }
-
-        return new ArrayList<>(eventMap.values());
     }
 }
