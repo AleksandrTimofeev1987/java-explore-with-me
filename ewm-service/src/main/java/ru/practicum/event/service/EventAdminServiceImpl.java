@@ -12,12 +12,16 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.repository.CategoryRepository;
+import ru.practicum.event.dto.EventIdAvRate;
+import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.dto.StateActionAdmin;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.QEvent;
+import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
+import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
@@ -25,6 +29,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -34,14 +40,16 @@ public class EventAdminServiceImpl implements EventAdminService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final EventRepository eventRepository;
     private final CategoryRepository categoryRepository;
+    private final RateEventRepository rateRepository;
     private final MessageSource messageSource;
-    Map<StateActionAdmin, Consumer<Event>> settingEventStatusMap = Map.of(
+    private final EventMapper eventMapper;
+    private Map<StateActionAdmin, Consumer<Event>> settingEventStatusMap = Map.of(
             StateActionAdmin.PUBLISH_EVENT, this::setEventStatusPublished,
             StateActionAdmin.REJECT_EVENT, this::setEventStatusCanceled
     );
 
     @Override
-    public List<Event> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
+    public List<EventResponseFull> getEvents(Long[] users, EventState[] states, Long[] categories, LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from, Integer size) {
         log.debug("A list of events is requested with the following pagination parameters: from={} and size={}.", from, size);
         Pageable page = PageRequest.of(from / size, size, SORT_BY_ID);
 
@@ -71,18 +79,18 @@ public class EventAdminServiceImpl implements EventAdminService {
         List<Event> foundEvents = eventRepository.findAll(expression, page).getContent();
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return foundEvents;
+        return buildEventResponses(foundEvents);
     }
 
     @Override
-    public Event updateEvent(Long eventId, EventUpdateAdmin eventDto) {
+    public EventResponseFull updateEvent(Long eventId, EventUpdateAdmin eventDto) {
         log.debug("Request to update event with id={} is received from admin.", eventId);
 
         if (eventDto.getEventDate() != null) {
             validateEventDate(eventDto.getEventDate());
         }
 
-        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
+        Event savedEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null)));
 
         Event updatedEvent;
         try {
@@ -91,7 +99,7 @@ public class EventAdminServiceImpl implements EventAdminService {
             throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
         log.debug("Event with ID={} is updated.", eventId);
-        return updatedEvent;
+        return eventMapper.toEventResponseFull(updatedEvent);
     }
 
     private Event buildEventForUpdate(EventUpdateAdmin eventDto, Event event) {
@@ -105,7 +113,7 @@ public class EventAdminServiceImpl implements EventAdminService {
             event.setDescription(eventDto.getDescription());
         }
         if (eventDto.getCategory() != null) {
-            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[] {eventDto.getCategory()}, null)));
+            Category category = categoryRepository.findById(eventDto.getCategory()).orElseThrow(() -> new NotFoundException(messageSource.getMessage("category.not_found", new Object[]{eventDto.getCategory()}, null)));
             event.setCategory(category);
         }
         if (eventDto.getEventDate() != null) {
@@ -144,6 +152,23 @@ public class EventAdminServiceImpl implements EventAdminService {
         } else {
             throw new ConflictException(messageSource.getMessage("state.event.cancel.not_pending", null, null));
         }
+    }
+
+    private List<EventResponseFull> buildEventResponses(List<Event> foundEvents) {
+        Map<Long, EventResponseFull> eventMap = foundEvents
+                .stream()
+                .map(eventMapper::toEventResponseFull)
+                .collect(Collectors.toMap(EventResponseFull::getId, Function.identity()));
+
+        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
+                .stream()
+                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
+
+        if (!eventsRates.isEmpty()) {
+            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
+        }
+
+        return eventMap.values().stream().collect(Collectors.toList());
     }
 
     private void validateEventDate(LocalDateTime eventDate) {

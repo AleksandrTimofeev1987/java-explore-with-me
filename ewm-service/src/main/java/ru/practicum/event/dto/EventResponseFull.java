@@ -1,5 +1,7 @@
 package ru.practicum.event.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.format.annotation.NumberFormat;
@@ -24,6 +26,7 @@ public class EventResponseFull {
 
     private Category category;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
 
     private UserResponseIdAndName initiator;
@@ -46,6 +49,7 @@ public class EventResponseFull {
 
     private EventState state;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @NumberFormat(style = NumberFormat.Style.NUMBER, pattern = "#.##")
     private Double rate;
 }

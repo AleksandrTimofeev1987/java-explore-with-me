@@ -1,7 +1,6 @@
 package ru.practicum.event.service;
 
 import ru.practicum.event.dto.*;
-import ru.practicum.event.entity.Event;
 import ru.practicum.request.dto.RequestResponse;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public interface EventPrivateService {
      *
      * @return List of events initiated by user.
      */
-    List<EventResponse> getEvents(Long userId, Integer from, Integer size);
+    List<EventResponseShort> getEvents(Long userId, Integer from, Integer size);
 
     /**
      * Method gets event initiated by user from repository.
@@ -37,7 +36,7 @@ public interface EventPrivateService {
      *
      * @return Added event with assigned ID.
      */
-    Event createEvent(Long userId, EventCreate eventDto);
+    EventResponseFull createEvent(Long userId, EventCreate eventDto);
 
     /**
      * Method updates event in repository.
@@ -48,7 +47,7 @@ public interface EventPrivateService {
      *
      * @return Updated event.
      */
-    Event updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto);
+    EventResponseFull updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto);
 
     /**
      * Method gets all requests created for user's event.

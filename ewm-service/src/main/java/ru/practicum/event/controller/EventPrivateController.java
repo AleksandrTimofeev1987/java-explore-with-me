@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.event.dto.*;
-import ru.practicum.event.entity.Event;
 import ru.practicum.event.service.EventPrivateService;
 import ru.practicum.request.dto.RequestResponse;
 
@@ -25,9 +24,9 @@ public class EventPrivateController {
     private final EventPrivateService service;
 
     @GetMapping
-    public List<EventResponse> getEvents(@PathVariable Long userId,
-                                     @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                     @Positive @RequestParam(defaultValue = "10") Integer size) {
+    public List<EventResponseShort> getEvents(@PathVariable Long userId,
+                                              @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                              @Positive @RequestParam(defaultValue = "10") Integer size) {
         log.debug("Getting events");
         return service.getEvents(userId, from, size);
     }
@@ -41,13 +40,13 @@ public class EventPrivateController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Event createEvent(@PathVariable Long userId, @Valid @RequestBody EventCreate eventDto) {
+    public EventResponseFull createEvent(@PathVariable Long userId, @Valid @RequestBody EventCreate eventDto) {
         log.debug("Creating event with title={}", eventDto.getTitle());
         return service.createEvent(userId, eventDto);
     }
 
     @PatchMapping("/{eventId}")
-    public Event updateEvent(@PathVariable Long userId,
+    public EventResponseFull updateEvent(@PathVariable Long userId,
                              @PathVariable Long eventId,
                              @Valid @RequestBody EventUpdatePrivate eventDto) {
         log.debug("Updating event with id={}", eventId);

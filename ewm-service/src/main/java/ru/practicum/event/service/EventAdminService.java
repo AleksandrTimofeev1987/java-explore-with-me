@@ -1,7 +1,7 @@
 package ru.practicum.event.service;
 
+import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.dto.EventUpdateAdmin;
-import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 
 import java.time.LocalDateTime;
@@ -22,7 +22,7 @@ public interface EventAdminService {
      *
      * @return List of events.
      */
-    List<Event> getEvents(Long[] users,
+    List<EventResponseFull> getEvents(Long[] users,
                           EventState[] states,
                           Long[] categories,
                           LocalDateTime rangeStart,
@@ -38,5 +38,5 @@ public interface EventAdminService {
      *
      * @return Updated event.
      */
-    Event updateEvent(Long eventId, EventUpdateAdmin eventDto);
+    EventResponseFull updateEvent(Long eventId, EventUpdateAdmin eventDto);
 }

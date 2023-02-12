@@ -1,8 +1,8 @@
 package ru.practicum.event.service;
 
 import ru.practicum.event.controller.SearchSort;
-import ru.practicum.event.dto.EventResponse;
-import ru.practicum.event.entity.Event;
+import ru.practicum.event.dto.EventResponseFull;
+import ru.practicum.event.dto.EventResponseShort;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,7 +24,7 @@ public interface EventPublicService {
      *
      * @return List of events.
      */
-    List<EventResponse> getEvents(String text, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd, Boolean onlyAvailable, SearchSort sort, Integer from, Integer size);
+    List<EventResponseShort> getEvents(String text, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd, Boolean onlyAvailable, SearchSort sort, Integer from, Integer size);
 
     /**
      * Method gets event by id from repository.
@@ -33,5 +33,5 @@ public interface EventPublicService {
      *
      * @return Event with correct ID.
      */
-    Event getEventById(Long eventId);
+    EventResponseFull getEventById(Long eventId);
 }

@@ -3,7 +3,7 @@ package ru.practicum.event.mapper;
 import org.mapstruct.Mapper;
 import ru.practicum.category.entity.Category;
 import ru.practicum.event.dto.EventCreate;
-import ru.practicum.event.dto.EventResponse;
+import ru.practicum.event.dto.EventResponseShort;
 import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Mapper(componentModel = "spring")
 public interface EventMapper {
 
-    EventResponse toEventResponse(Event event);
+    EventResponseShort toEventResponseShort(Event event);
 
     EventResponseFull toEventResponseFull(Event event);
 

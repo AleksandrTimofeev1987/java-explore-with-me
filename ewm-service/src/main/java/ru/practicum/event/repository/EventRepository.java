@@ -12,7 +12,6 @@ import ru.practicum.event.entity.EventState;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long>, QuerydslPredicateExecutor<Event> {
@@ -22,7 +21,7 @@ public interface EventRepository extends JpaRepository<Event, Long>, QuerydslPre
             "FROM Event e " +
             "WHERE e.id IN :ids " +
             "ORDER BY e.id")
-    Set<Event> findEventsByIds(@Param("ids") Long[] eventIds);
+    List<Event> findEventsByIds(@Param("ids") Long[] eventIds);
 
     Optional<Event> findEventByIdAndState(Long eventId, EventState published);
 

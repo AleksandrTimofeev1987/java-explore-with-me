@@ -7,8 +7,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.client.EndpointHitClient;
 import ru.practicum.dto.EndpointHitCreate;
-import ru.practicum.event.dto.EventResponse;
-import ru.practicum.event.entity.Event;
+import ru.practicum.event.dto.EventResponseFull;
+import ru.practicum.event.dto.EventResponseShort;
 import ru.practicum.event.service.EventPublicService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,16 +28,16 @@ public class EventPublicController {
     private final EndpointHitClient client;
 
     @GetMapping
-    public List<EventResponse> getEvents(@RequestParam(required = false) String text,
-                                         @RequestParam(required = false) Long[] categories,
-                                         @RequestParam(required = false) Boolean paid,
-                                         @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
-                                         @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
-                                         @RequestParam(required = false, defaultValue = "false") Boolean onlyAvailable,
-                                         @RequestParam(required = false, defaultValue = "EVENT_DATE") SearchSort sort,
-                                         @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                         @Positive @RequestParam(defaultValue = "10") Integer size,
-                                         HttpServletRequest request) {
+    public List<EventResponseShort> getEvents(@RequestParam(required = false) String text,
+                                              @RequestParam(required = false) Long[] categories,
+                                              @RequestParam(required = false) Boolean paid,
+                                              @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
+                                              @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
+                                              @RequestParam(required = false, defaultValue = "false") Boolean onlyAvailable,
+                                              @RequestParam(required = false, defaultValue = "EVENT_DATE") SearchSort sort,
+                                              @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                              @Positive @RequestParam(defaultValue = "10") Integer size,
+                                              HttpServletRequest request) {
         log.debug("Getting events");
 
         EndpointHitCreate hit = buildEndpointHit(request);
@@ -47,7 +47,7 @@ public class EventPublicController {
     }
 
     @GetMapping("/{eventId}")
-    public Event getEventById(@PathVariable Long eventId, HttpServletRequest request) {
+    public EventResponseFull getEventById(@PathVariable Long eventId, HttpServletRequest request) {
         log.debug("Getting event by ID");
 
         EndpointHitCreate hit = buildEndpointHit(request);

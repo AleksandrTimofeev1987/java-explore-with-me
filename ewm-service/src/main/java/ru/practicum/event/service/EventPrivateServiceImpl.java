@@ -16,7 +16,6 @@ import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
-import ru.practicum.event.entity.RateEvent;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
 import ru.practicum.event.repository.RateEventRepository;
@@ -31,7 +30,6 @@ import ru.practicum.user.entity.User;
 import ru.practicum.user.repository.UserRepository;
 
 import java.time.LocalDateTime;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -52,13 +50,13 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
     private final MessageSource messageSource;
-    Map<StateActionPrivate, Consumer<Event>> settingEventStatusMap = Map.of(
+    private Map<StateActionPrivate, Consumer<Event>> settingEventStatusMap = Map.of(
             StateActionPrivate.SEND_TO_REVIEW, event -> event.setState(EventState.PENDING),
             StateActionPrivate.CANCEL_REVIEW, event -> event.setState(EventState.CANCELED)
     );
 
     @Override
-    public List<EventResponse> getEvents(Long userId, Integer from, Integer size) {
+    public List<EventResponseShort> getEvents(Long userId, Integer from, Integer size) {
         log.debug("A list of events initiated by user with id={} is requested with the following pagination parameters: from={} and size={}.", userId, from, size);
         verifyUserExists(userId);
 
@@ -80,7 +78,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     }
 
     @Override
-    public Event createEvent(Long userId, EventCreate eventDto) {
+    public EventResponseFull createEvent(Long userId, EventCreate eventDto) {
         log.debug("Request to add event with title={} is received.", eventDto.getTitle());
         verifyUserExists(userId);
 
@@ -96,11 +94,11 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         }
 
         log.debug("Event with ID={} is added to repository.", createdEvent.getId());
-        return createdEvent;
+        return eventMapper.toEventResponseFull(createdEvent);
     }
 
     @Override
-    public Event updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto) {
+    public EventResponseFull updateEvent(Long userId, Long eventId, EventUpdatePrivate eventDto) {
         log.debug("Request to update event with id={} is received from user with id={}.", eventId, userId);
         verifyUserExists(userId);
 
@@ -125,7 +123,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             throw new ConflictException(messageSource.getMessage("title.event.duplicate", null, null));
         }
         log.debug("Event with ID={} is updated.", eventId);
-        return updatedEvent;
+        return eventMapper.toEventResponseFull(updatedEvent);
     }
 
     @Override
@@ -238,29 +236,21 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     }
 
 
-    private List<EventResponse> buildEventResponses(List<Event> foundEvents) {
-        List<EventResponse> eventResponses = foundEvents
+    private List<EventResponseShort> buildEventResponses(List<Event> foundEvents) {
+        Map<Long, EventResponseShort> eventMap = foundEvents
                 .stream()
-                .map(eventMapper::toEventResponse)
-                .collect(Collectors.toList());
+                .map(eventMapper::toEventResponseShort)
+                .collect(Collectors.toMap(EventResponseShort::getId, Function.identity()));
 
-        Map<Long, EventResponse> eventMap = eventResponses
+        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
                 .stream()
-                .collect(Collectors.toMap(EventResponse::getId, Function.identity()));
-
-        Map<Long, List<RateEvent>> eventsRates = rateRepository.findRateEventByEventId(eventMap.keySet())
-                .stream()
-                .collect(Collectors.groupingBy(RateEvent::getEventId));
+                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
 
         if (!eventsRates.isEmpty()) {
-            eventResponses.forEach(event -> event
-                    .setRate(getEventRate(eventsRates.get(event.getId())
-                            .stream()
-                            .map(RateEvent::getRate)
-                            .collect(Collectors.toList()))));
+            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
         }
 
-        return eventResponses;
+        return eventMap.values().stream().collect(Collectors.toList());
     }
 
     private EventResponseFull buildFullEventResponse(Event foundEvent) {
@@ -270,11 +260,6 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         result.setRate(rate);
 
         return result;
-    }
-
-    private Double getEventRate(List<Integer> rates) {
-        IntSummaryStatistics iss = rates.stream().mapToInt(rate -> rate).summaryStatistics();
-        return iss.getAverage();
     }
 
     private void validateRequestStatusPending(Request request) throws ConflictException {

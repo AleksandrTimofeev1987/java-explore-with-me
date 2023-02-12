@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.dto.EventUpdateAdmin;
-import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.service.EventAdminService;
 
@@ -26,19 +26,19 @@ public class EventAdminController {
     private final EventAdminService service;
 
     @GetMapping
-    public List<Event> getEvents(@RequestParam(required = false) Long[] users,
-                                 @RequestParam(required = false) EventState[] states,
-                                 @RequestParam(required = false) Long[] categories,
-                                 @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
-                                 @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
-                                 @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                 @Positive @RequestParam(defaultValue = "10") Integer size) {
+    public List<EventResponseFull> getEvents(@RequestParam(required = false) Long[] users,
+                                             @RequestParam(required = false) EventState[] states,
+                                             @RequestParam(required = false) Long[] categories,
+                                             @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeStart,
+                                             @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime rangeEnd,
+                                             @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                             @Positive @RequestParam(defaultValue = "10") Integer size) {
         log.debug("Getting events");
         return service.getEvents(users, states, categories, rangeStart, rangeEnd, from, size);
     }
 
     @PatchMapping("/{eventId}")
-    public Event updateEvent(@PathVariable Long eventId,
+    public EventResponseFull updateEvent(@PathVariable Long eventId,
                              @Valid @RequestBody EventUpdateAdmin eventDto) {
         log.debug("Updating event with id={}", eventId);
         return service.updateEvent(eventId, eventDto);

@@ -2,9 +2,9 @@ package ru.practicum.compilation.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import ru.practicum.event.dto.EventResponse;
+import ru.practicum.event.dto.EventResponseShort;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +12,7 @@ public class CompilationResponse {
 
     private Long id;
 
-    private Set<EventResponse> events;
+    private List<EventResponseShort> events;
 
     private Boolean pinned;
 
