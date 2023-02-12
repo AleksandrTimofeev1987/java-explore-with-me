@@ -41,10 +41,15 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
 
         Compilation compilation = buildNewCompilation(compilationDto);
 
-        CompilationResponse createdCompilationDto = saveCompilation(compilation);
+        Compilation createdCompilation;
+        try {
+            createdCompilation = compRepository.save(compilation);
+        } catch (DataIntegrityViolationException e) {
+            throw new ConflictException(messageSource.getMessage("title.compilation.duplicate", null, null));
+        }
 
-        log.debug("Compilation with ID={} is added to repository.", createdCompilationDto.getId());
-        return createdCompilationDto;
+        log.debug("Compilation with ID={} is added to repository.", createdCompilation.getId());
+        return mapper.toCompilationResponse(createdCompilation);
     }
 
     @Override
@@ -63,28 +68,20 @@ public class CompilationIAdminServiceImpl implements CompilationAdminService {
     @Override
     public CompilationResponse updateCompilation(Long compId, CompilationUpdate compilationDto) {
         log.debug("Request to update compilation with id={} is received.", compId);
+
         Compilation savedCompilation = compRepository.findById(compId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("compilation.not_found", new Object[] {compId}, null)));
 
         Compilation compilationForUpdate = buildCompilationForUpdate(compilationDto, savedCompilation);
 
-        CompilationResponse updatedCompilationDto = saveCompilation(compilationForUpdate);
-
-        log.debug("Compilation with id={} is updated in repository.", compId);
-        return updatedCompilationDto;
-    }
-
-    private CompilationResponse saveCompilation(Compilation compilation) {
-        Compilation savedCompilation;
+        Compilation updatedCompilation;
         try {
-            savedCompilation = compRepository.save(compilation);
+            updatedCompilation = compRepository.save(compilationForUpdate);
         } catch (DataIntegrityViolationException e) {
             throw new ConflictException(messageSource.getMessage("title.compilation.duplicate", null, null));
         }
 
-        CompilationResponse savedCompilationDto = mapper.toCompilationResponse(savedCompilation);
-        savedCompilationDto.setEvents(buildEventResponses(savedCompilationDto.getEvents()));
-
-        return savedCompilationDto;
+        log.debug("Compilation with id={} is updated in repository.", compId);
+        return mapper.toCompilationResponse(updatedCompilation);
     }
 
     private Compilation buildNewCompilation(CompilationCreate compilationDto) {

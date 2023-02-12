@@ -12,7 +12,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.practicum.category.entity.Category;
 import ru.practicum.category.repository.CategoryRepository;
-import ru.practicum.event.dto.EventIdAvRate;
 import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.dto.EventUpdateAdmin;
 import ru.practicum.event.dto.StateActionAdmin;
@@ -21,7 +20,6 @@ import ru.practicum.event.entity.EventState;
 import ru.practicum.event.entity.QEvent;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
-import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 
@@ -29,7 +27,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,10 +37,9 @@ public class EventAdminServiceImpl implements EventAdminService {
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final EventRepository eventRepository;
     private final CategoryRepository categoryRepository;
-    private final RateEventRepository rateRepository;
     private final MessageSource messageSource;
     private final EventMapper eventMapper;
-    private Map<StateActionAdmin, Consumer<Event>> settingEventStatusMap = Map.of(
+    private final Map<StateActionAdmin, Consumer<Event>> settingEventStatusMap = Map.of(
             StateActionAdmin.PUBLISH_EVENT, this::setEventStatusPublished,
             StateActionAdmin.REJECT_EVENT, this::setEventStatusCanceled
     );
@@ -79,7 +75,10 @@ public class EventAdminServiceImpl implements EventAdminService {
         List<Event> foundEvents = eventRepository.findAll(expression, page).getContent();
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return buildEventResponses(foundEvents);
+        return foundEvents
+                .stream()
+                .map(eventMapper::toEventResponseFull)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -152,23 +151,6 @@ public class EventAdminServiceImpl implements EventAdminService {
         } else {
             throw new ConflictException(messageSource.getMessage("state.event.cancel.not_pending", null, null));
         }
-    }
-
-    private List<EventResponseFull> buildEventResponses(List<Event> foundEvents) {
-        Map<Long, EventResponseFull> eventMap = foundEvents
-                .stream()
-                .map(eventMapper::toEventResponseFull)
-                .collect(Collectors.toMap(EventResponseFull::getId, Function.identity()));
-
-        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
-                .stream()
-                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
-
-        if (!eventsRates.isEmpty()) {
-            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
-        }
-
-        return eventMap.values().stream().collect(Collectors.toList());
     }
 
     private void validateEventDate(LocalDateTime eventDate) {

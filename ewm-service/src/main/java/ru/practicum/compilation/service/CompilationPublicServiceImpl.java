@@ -14,13 +14,9 @@ import ru.practicum.compilation.entity.Compilation;
 import ru.practicum.compilation.entity.QCompilation;
 import ru.practicum.compilation.mapper.CompilationMapper;
 import ru.practicum.compilation.repository.CompilationRepository;
-import ru.practicum.event.dto.EventIdAvRate;
-import ru.practicum.event.dto.EventResponseShort;
-import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.NotFoundException;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,7 +26,6 @@ public class CompilationPublicServiceImpl implements CompilationPublicService {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
     private final CompilationRepository compilationRepository;
-    private final RateEventRepository rateRepository;
     private final CompilationMapper mapper;
     private final MessageSource messageSource;
 
@@ -54,8 +49,6 @@ public class CompilationPublicServiceImpl implements CompilationPublicService {
                 .map(mapper::toCompilationResponse)
                 .collect(Collectors.toList());
 
-        populateCompilationsEventsWithRates(compilationsReturn);
-
         log.debug("A list of compilations is received from repository with size of {}.", foundCompilations.size());
         return compilationsReturn;
     }
@@ -65,30 +58,8 @@ public class CompilationPublicServiceImpl implements CompilationPublicService {
         log.debug("Compilation with compId={} is requested.", compId);
 
         Compilation foundCompilation = compilationRepository.findById(compId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("compilation.not_found", new Object[] {compId}, null)));
-        CompilationResponse foundCompilationDto = mapper.toCompilationResponse(foundCompilation);
-        foundCompilationDto.setEvents(buildEventResponses(foundCompilationDto.getEvents()));
 
         log.debug("Compilation with id={} is received from repository.", compId);
-        return foundCompilationDto;
-    }
-
-    private void populateCompilationsEventsWithRates(List<CompilationResponse> compilationsReturn) {
-        compilationsReturn.forEach(compilation -> compilation.setEvents(buildEventResponses(compilation.getEvents())));
-    }
-
-    private List<EventResponseShort> buildEventResponses(List<EventResponseShort> events) {
-        Map<Long, EventResponseShort> eventMap = events
-                .stream()
-                .collect(Collectors.toMap(EventResponseShort::getId, Function.identity()));
-
-        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
-                .stream()
-                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
-
-        if (!eventsRates.isEmpty()) {
-            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
-        }
-
-        return new ArrayList<>(eventMap.values());
+        return mapper.toCompilationResponse(foundCompilation);
     }
 }

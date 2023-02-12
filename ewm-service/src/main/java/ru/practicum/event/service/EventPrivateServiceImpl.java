@@ -18,7 +18,6 @@ import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
-import ru.practicum.event.repository.RateEventRepository;
 import ru.practicum.exception.model.ConflictException;
 import ru.practicum.exception.model.NotFoundException;
 import ru.practicum.request.dto.RequestResponse;
@@ -33,7 +32,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -46,11 +44,10 @@ public class EventPrivateServiceImpl implements EventPrivateService {
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final RequestRepository requestRepository;
-    private final RateEventRepository rateRepository;
     private final EventMapper eventMapper;
     private final RequestMapper requestMapper;
     private final MessageSource messageSource;
-    private Map<StateActionPrivate, Consumer<Event>> settingEventStatusMap = Map.of(
+    private final Map<StateActionPrivate, Consumer<Event>> settingEventStatusMap = Map.of(
             StateActionPrivate.SEND_TO_REVIEW, event -> event.setState(EventState.PENDING),
             StateActionPrivate.CANCEL_REVIEW, event -> event.setState(EventState.CANCELED)
     );
@@ -64,7 +61,10 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         List<Event> foundEvents = eventRepository.findEventsByInitiatorId(userId, page);
 
         log.debug("A list of events is received from repository with size of {}.", foundEvents.size());
-        return buildEventResponses(foundEvents);
+        return foundEvents
+                .stream()
+                .map(eventMapper::toEventResponseShort)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -74,7 +74,7 @@ public class EventPrivateServiceImpl implements EventPrivateService {
 
         Event foundEvent = eventRepository.findEventByInitiatorIdAndId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null)));
         log.debug("Event with id={} is received from repository.", eventId);
-        return buildFullEventResponse(foundEvent);
+        return eventMapper.toEventResponseFull(foundEvent);
     }
 
     @Override
@@ -232,33 +232,6 @@ public class EventPrivateServiceImpl implements EventPrivateService {
             Request rejectedRequest = setRequestRejectedStatus(request);
             result.getRejectedRequests().add(requestMapper.toRequestResponse(rejectedRequest));
         }
-        return result;
-    }
-
-
-    private List<EventResponseShort> buildEventResponses(List<Event> foundEvents) {
-        Map<Long, EventResponseShort> eventMap = foundEvents
-                .stream()
-                .map(eventMapper::toEventResponseShort)
-                .collect(Collectors.toMap(EventResponseShort::getId, Function.identity()));
-
-        Map<Long, EventIdAvRate> eventsRates = rateRepository.getAverageRatesByEvents(eventMap.keySet())
-                .stream()
-                .collect(Collectors.toMap(EventIdAvRate::getEventId, Function.identity()));
-
-        if (!eventsRates.isEmpty()) {
-            eventMap.values().forEach(event -> event.setRate(eventsRates.get(event.getId()).getRate()));
-        }
-
-        return eventMap.values().stream().collect(Collectors.toList());
-    }
-
-    private EventResponseFull buildFullEventResponse(Event foundEvent) {
-        EventResponseFull result = eventMapper.toEventResponseFull(foundEvent);
-
-        Double rate = rateRepository.calculateEventAverageRateById(foundEvent.getId());
-        result.setRate(rate);
-
         return result;
     }
 
