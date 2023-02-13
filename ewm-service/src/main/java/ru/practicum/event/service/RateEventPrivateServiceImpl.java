@@ -39,6 +39,8 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
     public List<RateEventResponse> getRatesByCreator(Long userId) {
         log.debug("A list of events rates created by user with id={} is requested", userId);
 
+        verifyUserExists(userId);
+
         List<RateEvent> foundRateEvents = rateRepository.findRateEventByUserId(userId);
 
         log.debug("A list of events rates  is received from repository with size of {}.", foundRateEvents.size());
@@ -57,7 +59,6 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
 
         validateUserNotInitiator(rateEventDto.getUser(), event.getInitiator().getId());
         validateUserHasConfirmedRequestForThisEvent(rateEventDto.getUser(), event.getId());
-//        validateEventHasPassed(event.getEventDate());
         validateUserHasNotRatedThisEvent(user.getId(), event.getId());
 
         RateEvent rateEvent = buildNewRate(user, event, rateEventDto.getRate());
@@ -120,12 +121,6 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
         Request request = requestRepository.findRequestByRequesterIdAndEventId(userId, eventId).orElseThrow(() -> new NotFoundException(messageSource.getMessage("request.rate.not_found", null, null)));
         if (!request.getStatus().equals(RequestStatus.CONFIRMED)) {
             throw new ForbiddenException(messageSource.getMessage("request.rate.not_confirmed", null, null));
-        }
-    }
-
-    private void validateEventHasPassed(LocalDateTime eventDate) {
-        if (LocalDateTime.now().isBefore(eventDate)) {
-            throw new ForbiddenException(messageSource.getMessage("date.event.rate.not_passed", null, null));
         }
     }
 

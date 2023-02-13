@@ -24,6 +24,7 @@ public class RateEventCreate {
 
     @Min(value = 1, message = "{rate.rate_event.min}")
     @Max(value = 5, message = "{rate.rate_event.max}")
+    @NotNull(message = "{rate.rate_event.not_null}")
     private Integer rate;
 
 }
