@@ -10,7 +10,7 @@
 			"name": "Prepare for tests",
 			"item": [
 				{
-					"name": "Post User_1",
+					"name": "Post User_63",
 					"event": [
 						{
 							"listen": "test",
@@ -62,7 +62,7 @@
 					"response": []
 				},
 				{
-					"name": "Post User_2",
+					"name": "Post User_64",
 					"event": [
 						{
 							"listen": "test",
@@ -114,7 +114,7 @@
 					"response": []
 				},
 				{
-					"name": "Post User_3",
+					"name": "Post User_65",
 					"event": [
 						{
 							"listen": "test",
@@ -166,7 +166,7 @@
 					"response": []
 				},
 				{
-					"name": "Post User_4",
+					"name": "Post User_66",
 					"event": [
 						{
 							"listen": "test",
@@ -218,7 +218,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Category_1",
+					"name": "Post Category_55",
 					"event": [
 						{
 							"listen": "test",
@@ -269,7 +269,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Event_1",
+					"name": "Post Event_38",
 					"event": [
 						{
 							"listen": "test",
@@ -280,13 +280,13 @@
 									"});\r",
 									"pm.test(\"Test create event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_1');\r",
 									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_1');\r",
 									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_1');\r",
-									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
 									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
-									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(63);\r",
 									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
 									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
@@ -331,7 +331,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"event_title_1\",\r\n  \"annotation\": \"new_event_annotation_1\",\r\n  \"description\": \"new_event_description_1\",\r\n  \"category\": 1,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+							"raw": "{\r\n  \"title\": \"event_title_1\",\r\n  \"annotation\": \"new_event_annotation_1\",\r\n  \"description\": \"new_event_description_1\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events",
@@ -346,7 +346,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "63"
 								}
 							]
 						}
@@ -354,7 +354,7 @@
 					"response": []
 				},
 				{
-					"name": "Patch Admin Event_1 - PUBLISH",
+					"name": "Patch Admin Event_38 - PUBLISH",
 					"event": [
 						{
 							"listen": "test",
@@ -365,7 +365,7 @@
 									"});\r",
 									"pm.test(\"Test update event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
 									"});\r",
 									"\r",
@@ -406,7 +406,7 @@
 							"variable": [
 								{
 									"key": "eventId",
-									"value": "1"
+									"value": "38"
 								}
 							]
 						}
@@ -414,7 +414,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Request_1 - Event_1",
+					"name": "Post Request_12 - Event_1",
 					"event": [
 						{
 							"listen": "test",
@@ -425,9 +425,9 @@
 									"});\r",
 									"pm.test(\"Test create request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
-									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(12);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
 									"});"
@@ -464,7 +464,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/users/:userId/requests?eventId=1",
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=38",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -476,13 +476,13 @@
 							"query": [
 								{
 									"key": "eventId",
-									"value": "1"
+									"value": "38"
 								}
 							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -490,7 +490,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Request_2 - Event_1",
+					"name": "Post Request_13 - Event_1",
 					"event": [
 						{
 							"listen": "test",
@@ -501,9 +501,9 @@
 									"});\r",
 									"pm.test(\"Test create request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(13);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
 									"});"
@@ -540,7 +540,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/users/:userId/requests?eventId=1",
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=38",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -552,13 +552,13 @@
 							"query": [
 								{
 									"key": "eventId",
-									"value": "1"
+									"value": "38"
 								}
 							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								}
 							]
 						}
@@ -693,7 +693,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -742,7 +742,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1\r\n}"
+							"raw": "{\r\n  \"event\": 38\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -758,7 +758,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -807,7 +807,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 0\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 0\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -823,7 +823,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -872,7 +872,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 6\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 6\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -888,7 +888,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -953,7 +953,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1002,7 +1002,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1018,7 +1018,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "63"
 								}
 							]
 						}
@@ -1067,7 +1067,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1083,7 +1083,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "4"
+									"value": "66"
 								}
 							]
 						}
@@ -1103,8 +1103,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
 									"});"
 								],
@@ -1128,7 +1128,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1144,7 +1144,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1193,7 +1193,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1209,7 +1209,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1345,7 +1345,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -1415,7 +1415,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								},
 								{
 									"key": "rateId",
@@ -1474,7 +1474,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -1539,7 +1539,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1615,7 +1615,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Rate_2 - Event_1",
+					"name": "Post Rate_2 - Event_38",
 					"event": [
 						{
 							"listen": "test",
@@ -1627,8 +1627,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4);\r",
 									"});"
 								],
@@ -1652,7 +1652,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 4\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 4\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1668,7 +1668,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1676,7 +1676,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Rate_3 - Event_1",
+					"name": "Post Rate_3 - Event_38",
 					"event": [
 						{
 							"listen": "test",
@@ -1688,8 +1688,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4);\r",
 									"});"
 								],
@@ -1713,7 +1713,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 4\r\n}"
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 4\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -1729,7 +1729,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								}
 							]
 						}
@@ -1750,8 +1750,8 @@
 									"    var jsonData = pm.response.json();\r",
 									"        pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
 									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(2);\r",
-									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[0].rate, '\"rate\" field').to.eql(4);\r",
 									"});"
 								],
@@ -1794,7 +1794,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -1866,7 +1866,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -1942,7 +1942,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -2094,7 +2094,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -2170,7 +2170,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								},
 								{
 									"key": "rateId",
@@ -2194,8 +2194,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
 									"});"
 								],
@@ -2242,7 +2242,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								},
 								{
 									"key": "rateId",
@@ -2267,8 +2267,8 @@
 									"    var jsonData = pm.response.json();\r",
 									"        pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
 									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(2);\r",
-									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[0].rate, '\"rate\" field').to.eql(5);\r",
 									"});"
 								],
@@ -2311,7 +2311,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -2375,7 +2375,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "63"
 								}
 							]
 						}
@@ -2396,7 +2396,7 @@
 									"pm.test(\"Test get event by id\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData.initiator.rate, 'jsonData.initiator.rate\" field').to.eql(4.5);\r",
 									"});"
@@ -2440,11 +2440,11 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "63"
 								},
 								{
 									"key": "eventId",
-									"value": "1"
+									"value": "38"
 								}
 							]
 						}
@@ -2471,7 +2471,7 @@
 									"    var jsonData = pm.response.json();\r",
 									"\r",
 									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
-									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.5);\r",
 									"});"
@@ -2502,7 +2502,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/admin/events?users=1&states=PUBLISHED&categories=1&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"raw": "{{mainUrl}}/admin/events?users=63&states=PUBLISHED&categories=55&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -2513,7 +2513,7 @@
 							"query": [
 								{
 									"key": "users",
-									"value": "1"
+									"value": "63"
 								},
 								{
 									"key": "states",
@@ -2521,7 +2521,7 @@
 								},
 								{
 									"key": "categories",
-									"value": "1"
+									"value": "55"
 								},
 								{
 									"key": "rangeStart",
@@ -2550,7 +2550,7 @@
 			"name": "Public Events: Test Ratings",
 			"item": [
 				{
-					"name": "Post Event_2",
+					"name": "Post Event_39",
 					"event": [
 						{
 							"listen": "test",
@@ -2561,13 +2561,13 @@
 									"});\r",
 									"pm.test(\"Test create event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_2');\r",
 									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_2');\r",
 									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_2');\r",
-									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
 									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
-									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(63);\r",
 									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
 									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
@@ -2612,7 +2612,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"event_title_2\",\r\n  \"annotation\": \"new_event_annotation_2\",\r\n  \"description\": \"new_event_description_2\",\r\n  \"category\": 1,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+							"raw": "{\r\n  \"title\": \"event_title_2\",\r\n  \"annotation\": \"new_event_annotation_2\",\r\n  \"description\": \"new_event_description_2\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events",
@@ -2627,7 +2627,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "63"
 								}
 							]
 						}
@@ -2635,7 +2635,7 @@
 					"response": []
 				},
 				{
-					"name": "Patch Admin Event_2 - PUBLISH",
+					"name": "Patch Admin Event_39 - PUBLISH",
 					"event": [
 						{
 							"listen": "test",
@@ -2646,7 +2646,7 @@
 									"});\r",
 									"pm.test(\"Test update event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
 									"});\r",
 									"\r",
@@ -2687,7 +2687,7 @@
 							"variable": [
 								{
 									"key": "eventId",
-									"value": "2"
+									"value": "39"
 								}
 							]
 						}
@@ -2695,7 +2695,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Request_3 - Event_2",
+					"name": "Post Request_14 - Event_39",
 					"event": [
 						{
 							"listen": "test",
@@ -2706,9 +2706,9 @@
 									"});\r",
 									"pm.test(\"Test create request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(14);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
 									"});"
@@ -2745,7 +2745,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/users/:userId/requests?eventId=2",
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=39",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -2757,13 +2757,13 @@
 							"query": [
 								{
 									"key": "eventId",
-									"value": "2"
+									"value": "39"
 								}
 							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -2771,7 +2771,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Request_4 - Event_2",
+					"name": "Post Request_15 - Event_39",
 					"event": [
 						{
 							"listen": "test",
@@ -2782,9 +2782,9 @@
 									"});\r",
 									"pm.test(\"Test create request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
-									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(15);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
 									"});"
@@ -2821,7 +2821,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/users/:userId/requests?eventId=2",
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=39",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -2833,13 +2833,13 @@
 							"query": [
 								{
 									"key": "eventId",
-									"value": "2"
+									"value": "39"
 								}
 							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								}
 							]
 						}
@@ -2859,8 +2859,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
 									"});"
 								],
@@ -2884,7 +2884,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 2,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 39,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -2900,7 +2900,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -2920,8 +2920,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(5);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(3);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
 									"});"
 								],
@@ -2945,7 +2945,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 2,\r\n  \"rate\": 5\r\n}"
+							"raw": "{\r\n  \"event\": 39,\r\n  \"rate\": 5\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -2961,7 +2961,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "3"
+									"value": "65"
 								}
 							]
 						}
@@ -2982,7 +2982,7 @@
 									"pm.test(\"Test get event by id\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData.views, 'result: \"views\" field').to.eql(1);\r",
 									"    pm.expect(jsonData.rate, 'result: \"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData.initiator.rate, 'jsonData.initiator.rate\" field').to.eql(4.75);\r",
@@ -3025,7 +3025,7 @@
 							"variable": [
 								{
 									"key": "eventId",
-									"value": "1"
+									"value": "38"
 								}
 							]
 						}
@@ -3033,7 +3033,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Events - No Filters",
+					"name": "Get Events",
 					"event": [
 						{
 							"listen": "test",
@@ -3047,10 +3047,10 @@
 									"    var jsonData = pm.response.json();\r",
 									"\r",
 									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
-									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
-									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(5.0);\r",
 									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3081,7 +3081,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/events?rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
+							"raw": "{{mainUrl}}/events?categories=55&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -3096,8 +3096,7 @@
 								},
 								{
 									"key": "categories",
-									"value": "4",
-									"disabled": true
+									"value": "55"
 								},
 								{
 									"key": "paid",
@@ -3151,11 +3150,11 @@
 									"pm.test(\"Test get events\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
-									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(10);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
 									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
-									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3201,7 +3200,7 @@
 								},
 								{
 									"key": "categories",
-									"value": "4",
+									"value": "55",
 									"disabled": true
 								},
 								{
@@ -3247,7 +3246,7 @@
 			"name": "Admin Compilations: Test Feature",
 			"item": [
 				{
-					"name": "Post Compilation_1",
+					"name": "Post Compilation_7",
 					"event": [
 						{
 							"listen": "test",
@@ -3258,11 +3257,11 @@
 									"});\r",
 									"pm.test(\"Test create compilation\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
 									"    pm.expect(jsonData.title, '\"title\" field').to.eql('compilation_1');\r",
 									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(false);\r",
 									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(1);\r",
-									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(1);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(38);\r",
 									"    pm.expect(jsonData.events[0].rate, '\"rate\" field of event').to.eql(4.5);\r",
 									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3287,7 +3286,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\": [\r\n    1\r\n  ],\r\n  \"pinned\": false,\r\n  \"title\": \"compilation_1\"\r\n}"
+							"raw": "{\r\n  \"events\": [\r\n    38\r\n  ],\r\n  \"pinned\": false,\r\n  \"title\": \"compilation_1\"\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/admin/compilations",
@@ -3303,7 +3302,7 @@
 					"response": []
 				},
 				{
-					"name": "Patch Compilation_1",
+					"name": "Patch Compilation_7",
 					"event": [
 						{
 							"listen": "test",
@@ -3314,11 +3313,11 @@
 									"});\r",
 									"pm.test(\"Test create compilation\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
 									"    pm.expect(jsonData.title, '\"title\" field').to.eql('updated_compilation_1');\r",
 									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(true);\r",
 									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(1);\r",
-									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(1);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(38);\r",
 									"    pm.expect(jsonData.events[0].rate, '\"rate\" field of event').to.eql(4.5);\r",
 									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3343,7 +3342,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\": [\r\n    1\r\n  ],\r\n  \"pinned\": true,\r\n  \"title\": \"updated_compilation_1\"\r\n}"
+							"raw": "{\r\n  \"events\": [\r\n    38\r\n  ],\r\n  \"pinned\": true,\r\n  \"title\": \"updated_compilation_1\"\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/admin/compilations/:compId",
@@ -3358,7 +3357,7 @@
 							"variable": [
 								{
 									"key": "compId",
-									"value": "1"
+									"value": "7"
 								}
 							]
 						}
@@ -3383,11 +3382,11 @@
 									"\r",
 									"pm.test(\"Test get compilations\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(1);\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(6);\r",
 									"\r",
-									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);\r",
-									"    pm.expect(jsonData[0].events[0].rate, 'result[0]: \"id\" field').to.eql(4.5);\r",
-									"    pm.expect(jsonData[0].events[0].initiator.rate, 'jsonData[0].events[0].initiator.rate\" field').to.eql(4.75);\r",
+									"    pm.expect(jsonData[5].id, 'result[5]: \"id\" field').to.eql(7);\r",
+									"    pm.expect(jsonData[5].events[0].rate, 'result[5]: \"id\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[5].events[0].initiator.rate, 'jsonData[5].events[0].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -3459,7 +3458,7 @@
 									"pm.test(\"Test get compilations\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"    pm.expect(jsonData.id, 'result[0]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
 									"    pm.expect(jsonData.events[0].rate, 'result[0]: \"id\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3501,7 +3500,7 @@
 							"variable": [
 								{
 									"key": "compId",
-									"value": "1"
+									"value": "7"
 								}
 							]
 						}
@@ -3527,11 +3526,11 @@
 									"pm.test(\"Test get events\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
-									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(10);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
 									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
-									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(38);\r",
 									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(4.5);\r",
 									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3580,7 +3579,7 @@
 								},
 								{
 									"key": "categories",
-									"value": "4",
+									"value": "55",
 									"disabled": true
 								},
 								{
@@ -3622,7 +3621,7 @@
 									"    var jsonData = pm.response.json();\r",
 									"\r",
 									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
-									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(2);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
 									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
 									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
 									"});"
@@ -3670,7 +3669,7 @@
 								},
 								{
 									"key": "categories",
-									"value": "4",
+									"value": "55",
 									"disabled": true
 								},
 								{
@@ -3703,7 +3702,7 @@
 			"name": "Private Users Rating",
 			"item": [
 				{
-					"name": "Post User_5",
+					"name": "Post User_67",
 					"event": [
 						{
 							"listen": "test",
@@ -3755,7 +3754,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Event_3",
+					"name": "Post Event_40",
 					"event": [
 						{
 							"listen": "test",
@@ -3766,13 +3765,13 @@
 									"});\r",
 									"pm.test(\"Test create event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(40);\r",
 									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_3');\r",
 									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_3');\r",
 									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_3');\r",
-									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
 									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
-									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(67);\r",
 									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
 									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
@@ -3817,7 +3816,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"event_title_3\",\r\n  \"annotation\": \"new_event_annotation_3\",\r\n  \"description\": \"new_event_description_3\",\r\n  \"category\": 1,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+							"raw": "{\r\n  \"title\": \"event_title_3\",\r\n  \"annotation\": \"new_event_annotation_3\",\r\n  \"description\": \"new_event_description_3\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events",
@@ -3832,7 +3831,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "4"
+									"value": "67"
 								}
 							]
 						}
@@ -3851,7 +3850,7 @@
 									"});\r",
 									"pm.test(\"Test update event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(40);\r",
 									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
 									"});\r",
 									"\r",
@@ -3892,7 +3891,7 @@
 							"variable": [
 								{
 									"key": "eventId",
-									"value": "3"
+									"value": "40"
 								}
 							]
 						}
@@ -3900,7 +3899,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Request_5 - Event_3",
+					"name": "Post Request_16 - Event_40",
 					"event": [
 						{
 							"listen": "test",
@@ -3911,9 +3910,9 @@
 									"});\r",
 									"pm.test(\"Test create request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.id, '\"id\" field').to.eql(5);\r",
-									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(16);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(40);\r",
 									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
 									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
 									"});"
@@ -3950,7 +3949,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{mainUrl}}/users/:userId/requests?eventId=3",
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=40",
 							"host": [
 								"{{mainUrl}}"
 							],
@@ -3962,13 +3961,13 @@
 							"query": [
 								{
 									"key": "eventId",
-									"value": "3"
+									"value": "40"
 								}
 							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -3988,8 +3987,8 @@
 									"pm.test(\"Test create rate event\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.id, '\"id\" field').to.eql(6);\r",
-									"    pm.expect(jsonData.user, '\"user\" field').to.eql(2);\r",
-									"    pm.expect(jsonData.event, '\"event\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(40);\r",
 									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(1);\r",
 									"});"
 								],
@@ -4013,7 +4012,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"event\": 3,\r\n  \"rate\": 1\r\n}"
+							"raw": "{\r\n  \"event\": 40,\r\n  \"rate\": 1\r\n}"
 						},
 						"url": {
 							"raw": "{{mainUrl}}/users/:userId/events/rate",
@@ -4029,7 +4028,7 @@
 							"variable": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "64"
 								}
 							]
 						}
@@ -4048,9 +4047,9 @@
 									"});\r",
 									"pm.test(\"Test get users\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.length, 'users count in total').to.eql(2);\r",
-									"    pm.expect(jsonData[0].id, '\"jsonData[0].id\" field to equal').to.eql(1);\r",
-									"    pm.expect(jsonData[1].id, '\"jsonData[1].id\" field to equal').to.eql(4);\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(10);\r",
+									"    pm.expect(jsonData[0].id, '\"jsonData[0].id\" field to equal').to.eql(63);\r",
+									"    pm.expect(jsonData[1].id, '\"jsonData[1].id\" field to equal').to.eql(67);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -4093,6 +4092,73 @@
 									"key": "count",
 									"value": "1",
 									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Rating - 1 user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"jsonData[0].id\" field to equal').to.eql(63);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/rating?count=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
 								}
 							],
 							"variable": [
