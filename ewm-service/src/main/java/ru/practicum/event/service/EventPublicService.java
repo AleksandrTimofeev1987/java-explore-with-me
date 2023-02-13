@@ -1,5 +1,6 @@
 package ru.practicum.event.service;
 
+
 import ru.practicum.event.controller.SearchSort;
 import ru.practicum.event.dto.EventResponseFull;
 import ru.practicum.event.dto.EventResponseShort;
@@ -12,7 +13,7 @@ public interface EventPublicService {
     /**
      * Method gets all events falling under specified filters.
      *
-     * @param text          IDs of users who initiated events.
+     * @param text          Search text in annotations or description.
      * @param categories    IDs of categories of the events.
      * @param paid          Should the events be only paid.
      * @param rangeStart    Start of sample period.

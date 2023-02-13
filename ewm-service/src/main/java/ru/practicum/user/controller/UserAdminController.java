@@ -9,7 +9,7 @@ import ru.practicum.user.dto.UserCreate;
 import ru.practicum.user.dto.UserResponse;
 import ru.practicum.user.entity.User;
 import ru.practicum.user.mapper.UserMapper;
-import ru.practicum.user.service.UserService;
+import ru.practicum.user.service.UserAdminService;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
@@ -21,9 +21,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @Validated
-public class UserController {
+public class UserAdminController {
 
-    private final UserService service;
+    private final UserAdminService service;
     private final UserMapper mapper;
 
     @GetMapping

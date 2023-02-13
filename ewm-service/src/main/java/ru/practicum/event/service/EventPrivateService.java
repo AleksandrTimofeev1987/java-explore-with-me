@@ -3,6 +3,7 @@ package ru.practicum.event.service;
 import ru.practicum.event.dto.*;
 import ru.practicum.request.dto.RequestResponse;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface EventPrivateService {
@@ -17,6 +18,20 @@ public interface EventPrivateService {
      * @return List of events initiated by user.
      */
     List<EventResponseShort> getEvents(Long userId, Integer from, Integer size);
+
+    /**
+     * Method gets most rated events falling under specified filters.
+     *
+     * @param userId        ID of user requesting rating.
+     * @param count         Number of events in rating.
+     * @param categories    IDs of categories of the events.
+     * @param paid          Should the events be only paid.
+     * @param rangeStart    Start of sample period.
+     * @param rangeEnd      End of sample period.
+     *
+     * @return List of events.
+     */
+    List<EventResponseShort> getMostRatedEvents(Long userId, Integer count, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd);
 
     /**
      * Method gets event initiated by user from repository.

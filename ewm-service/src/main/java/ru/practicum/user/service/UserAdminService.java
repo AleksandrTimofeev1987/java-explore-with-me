@@ -5,7 +5,7 @@ import ru.practicum.user.entity.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserAdminService {
     /**
      * Method returns all users (if no requirements) or select users is per ids array.
      *

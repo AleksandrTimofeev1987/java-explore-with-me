@@ -38,7 +38,7 @@ public class EventPublicController {
                                               @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                               @Positive @RequestParam(defaultValue = "10") Integer size,
                                               HttpServletRequest request) {
-        log.debug("Getting events");
+        log.debug("Getting events.");
 
         EndpointHitCreate hit = buildEndpointHit(request);
         client.createHit(hit);
@@ -60,7 +60,7 @@ public class EventPublicController {
         EndpointHitCreate hit = new EndpointHitCreate();
         hit.setApp("ewm-main-service");
         hit.setUri(request.getRequestURI());
-        hit.setIp(request.getRequestURI());
+        hit.setIp(request.getRemoteAddr());
 
         hit.setTimestamp(LocalDateTime.now());
         return hit;

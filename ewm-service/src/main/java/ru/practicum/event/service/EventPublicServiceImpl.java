@@ -63,7 +63,7 @@ public class EventPublicServiceImpl implements EventPublicService {
     public EventResponseFull getEventById(Long eventId) {
         log.debug("Event with id={} is requested.", eventId);
 
-        Event foundEvent = eventRepository.findEventByIdAndState(eventId, EventState.PUBLISHED).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[] {eventId}, null)));
+        Event foundEvent = eventRepository.findEventByIdAndState(eventId, EventState.PUBLISHED).orElseThrow(() -> new NotFoundException(messageSource.getMessage("event.not_found", new Object[]{eventId}, null)));
 
         foundEvent.setViews(foundEvent.getViews() + 1);
 

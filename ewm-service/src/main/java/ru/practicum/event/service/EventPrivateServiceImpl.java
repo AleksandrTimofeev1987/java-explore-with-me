@@ -1,6 +1,7 @@
 package ru.practicum.event.service;
 
 
+import com.querydsl.core.types.dsl.BooleanExpression;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;
@@ -16,6 +17,7 @@ import ru.practicum.category.repository.CategoryRepository;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.EventState;
+import ru.practicum.event.entity.QEvent;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.repository.EventRepository;
 import ru.practicum.exception.model.ConflictException;
@@ -40,6 +42,7 @@ import java.util.stream.Collectors;
 public class EventPrivateServiceImpl implements EventPrivateService {
 
     private static final Sort SORT_BY_ID = Sort.by(Sort.Direction.ASC, "id");
+    private static final Sort SORT_BY_RATING = Sort.by(Sort.Direction.DESC, "rate");
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
@@ -65,6 +68,24 @@ public class EventPrivateServiceImpl implements EventPrivateService {
                 .stream()
                 .map(eventMapper::toEventResponseShort)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<EventResponseShort> getMostRatedEvents(Long userId, Integer count, Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd) {
+        log.debug("A list of most rated events is requested.");
+        verifyUserExists(userId);
+
+        Pageable page = PageRequest.of(0, count, SORT_BY_RATING);
+
+        BooleanExpression expression = buildExpressionForRating(categories, paid, rangeStart, rangeEnd);
+
+        List<EventResponseShort> foundEvents = eventRepository.findAll(expression, page).getContent()
+                .stream()
+                .map(eventMapper::toEventResponseShort)
+                .collect(Collectors.toList());
+
+        log.debug("A list of most rated events is received from repository with size of {}.", foundEvents.size());
+        return foundEvents;
     }
 
     @Override
@@ -279,6 +300,31 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         settingEventStatusMap.get(eventDto.getStateAction()).accept(event);
 
         return event;
+    }
+
+    private BooleanExpression buildExpressionForRating(Long[] categories, Boolean paid, LocalDateTime rangeStart, LocalDateTime rangeEnd) {
+
+        QEvent qEvent = QEvent.event;
+
+        BooleanExpression expression = qEvent.state.eq(EventState.PUBLISHED);
+
+        if (categories != null) {
+            expression = expression.and(qEvent.category.id.in(categories));
+        }
+
+        if (paid != null) {
+            expression = expression.and(qEvent.paid.eq(paid));
+        }
+
+        if (rangeStart != null) {
+            expression = expression.and(qEvent.eventDate.after(rangeStart));
+        }
+
+        if (rangeEnd != null) {
+            expression = expression.and(qEvent.eventDate.before(rangeEnd));
+        }
+
+        return expression;
     }
 
     private void validateEventDate(LocalDateTime eventDate) {
