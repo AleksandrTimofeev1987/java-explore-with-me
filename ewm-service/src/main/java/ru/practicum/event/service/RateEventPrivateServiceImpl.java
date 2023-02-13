@@ -18,8 +18,6 @@ import ru.practicum.request.entity.RequestStatus;
 import ru.practicum.request.repository.RequestRepository;
 import ru.practicum.user.entity.User;
 import ru.practicum.user.repository.UserRepository;
-
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
