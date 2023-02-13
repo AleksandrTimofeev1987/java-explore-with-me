@@ -28,7 +28,8 @@ import java.util.stream.Collectors;
 public class EventPublicServiceImpl implements EventPublicService {
 
     private static final Sort SORT_BY_DATE = Sort.by(Sort.Direction.ASC, "eventDate");
-    private static final Sort SORT_BY_VIEWS = Sort.by(Sort.Direction.ASC, "views");
+    private static final Sort SORT_BY_VIEWS = Sort.by(Sort.Direction.DESC, "views");
+    private static final Sort SORT_BY_RATING = Sort.by(Sort.Direction.DESC, "rate");
     private final EventRepository eventRepository;
     private final EventMapper mapper;
     private final MessageSource messageSource;
@@ -43,6 +44,8 @@ public class EventPublicServiceImpl implements EventPublicService {
 
         if (sort.equals(SearchSort.VIEWS)) {
             page = PageRequest.of(from / size, size, SORT_BY_VIEWS);
+        } else if (sort.equals(SearchSort.RATING)) {
+            page = PageRequest.of(from / size, size, SORT_BY_RATING);
         }
 
         List<EventResponseShort> foundEvents = eventRepository.findAll(expression, page).getContent()
