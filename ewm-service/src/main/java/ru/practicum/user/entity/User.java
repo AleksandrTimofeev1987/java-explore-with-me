@@ -3,7 +3,6 @@ package ru.practicum.user.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 
@@ -25,10 +24,6 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Formula("" +
-            "(SELECT AVG(r.event_rate) " +
-            "FROM rates r " +
-            "JOIN events e ON r.event_id = e.event_id " +
-            "WHERE e.initiator_id = user_id)")
+    @Column(name = "user_rate")
     private Double rate;
 }

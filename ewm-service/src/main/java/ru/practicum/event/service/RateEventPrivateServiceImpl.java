@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.event.dto.RateEventCreate;
 import ru.practicum.event.dto.RateEventResponse;
 import ru.practicum.event.entity.Event;
@@ -49,6 +51,7 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public RateEventResponse rateEvent(RateEventCreate rateEventDto) {
         log.debug("Request to rate event with id={} is received.", rateEventDto.getEvent());
 
@@ -63,11 +66,15 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
 
         RateEvent createdRateEvent = rateRepository.save(rateEvent);
 
+        updateEventRate(event.getId());
+        updateUserRate(event.getInitiator().getId());
+
         log.debug("Event with id={} was rated. Rate event id={}, rate={}.", createdRateEvent.getEvent().getId(), createdRateEvent.getId(), createdRateEvent.getRate());
         return mapper.toRateEventResponse(createdRateEvent);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteRateEvent(Long userId, Long rateId) {
         log.debug("Request to delete event rate with id={} is received.", rateId);
 
@@ -76,10 +83,16 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
 
         rateRepository.deleteById(rateId);
 
+        Long eventID = rateRepository.getEventIdByRateId(rateId);
+
+        updateEventRate(eventID);
+        updateUserRate(eventRepository.getInitiatorIdByEventId(eventID));
+
         log.debug("Rate with id={} was deleted.", rateId);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public RateEventResponse updateRate(Long userId, Long rateId, Integer rate) {
         log.debug("Request to update event rate with id={} is received.", rateId);
 
@@ -90,8 +103,21 @@ public class RateEventPrivateServiceImpl implements RateEventPrivateService {
         savedRate.setRate(rate);
         RateEvent updatedRate = rateRepository.save(savedRate);
 
+        updateEventRate(updatedRate.getEventId());
+        updateUserRate(updatedRate.getEvent().getInitiator().getId());
+
         log.debug("Rate with id={} was updated.", rateId);
         return mapper.toRateEventResponse(updatedRate);
+    }
+
+    private void updateEventRate(Long eventId) {
+        Double eventRate = rateRepository.getEventRate(eventId);
+        eventRepository.setEventRate(eventId, eventRate);
+    }
+
+    private void updateUserRate(Long userId) {
+        Double userRate = rateRepository.getUserRate(userId);
+        userRepository.setUserRate(userId, userRate);
     }
 
     private RateEvent buildNewRate(User user, Event event, Integer rate) {

@@ -35,4 +35,17 @@ public interface EventRepository extends JpaRepository<Event, Long>, QuerydslPre
             "SET e.confirmedRequests = :requests " +
             "WHERE e.id = :id")
     void setEventConfirmedRequests(@Param ("id") Long eventId, @Param("requests") Integer confirmedRequests);
+
+    @Modifying
+    @Query(value = "" +
+            "UPDATE Event e " +
+            "SET e.rate = :rate " +
+            "WHERE e.id = :id")
+    void setEventRate(@Param ("id") Long eventId, @Param("rate") Double eventRate);
+
+    @Query(value = "" +
+            "SELECT e.initiator.id " +
+            "FROM Event e " +
+            "WHERE e.id = :eventId")
+    Long getInitiatorIdByEventId(@Param ("eventId") Long eventID);
 }

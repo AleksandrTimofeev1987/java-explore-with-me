@@ -63,6 +63,8 @@ public class UserAdminServiceImpl implements UserAdminService {
     public UserResponse createUser(User user) {
         log.debug("Request to add user with name={} is received.", user.getName());
 
+        user.setRate(0.0);
+
         User createdUser;
         try {
             createdUser = repository.save(user);

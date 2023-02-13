@@ -198,6 +198,8 @@ public class EventPrivateServiceImpl implements EventPrivateService {
         }
         event.setState(EventState.PENDING);
 
+        event.setRate(0.0);
+
         return event;
     }
 

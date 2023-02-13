@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.Formula;
 import ru.practicum.category.entity.Category;
 import ru.practicum.user.entity.User;
 
@@ -74,9 +73,6 @@ public class Event {
     @Column(name = "event_state", length = 10, nullable = false)
     private EventState state;
 
-    @Formula("" +
-            "(SELECT AVG(r.event_rate) " +
-            "FROM rates r " +
-            "WHERE r.event_id = event_id)")
+    @Column(name = "event_rate")
     private Double rate;
 }
