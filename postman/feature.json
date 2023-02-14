@@ -1,0 +1,4183 @@
+{
+	"info": {
+		"_postman_id": "f6b60ed8-c5ee-4fd4-ae91-32a46f4fefd3",
+		"name": "Test EWM - Feature",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23144209"
+	},
+	"item": [
+		{
+			"name": "Prepare for tests",
+			"item": [
+				{
+					"name": "Post User_63",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_1');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_1@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_1\",\r\n  \"email\": \"email_1@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_64",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_2');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_2@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_2\",\r\n  \"email\": \"email_2@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_65",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_3');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_3@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_3\",\r\n  \"email\": \"email_3@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User_66",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_4');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_4@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_4\",\r\n  \"email\": \"email_4@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category_55",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('category_name_1');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"category_name_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/categories",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event_38",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_1');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_1');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_1');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(63);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"let moment = require('moment');\r",
+									"\r",
+									"let m = moment();\r",
+									"m.add(3, 'hour');\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"eventDate\", m.format('YYYY-MM-DD HH:mm:ss'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_1\",\r\n  \"annotation\": \"new_event_annotation_1\",\r\n  \"description\": \"new_event_description_1\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_38 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_12 - Event_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(12);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=38",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "38"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_13 - Event_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(13);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=38",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "38"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private: Test Feature",
+			"item": [
+				{
+					"name": "Failed Post Rate_1_Wrong User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 1,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_Null Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_Null Rate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_Wrong Rate Less",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_Wrong Rate More",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 6\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_Wrong Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 100,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_User is Initiator",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 403 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.forbidden;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_User Do Not Have Valid Reuqest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "66"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Post Rate_1_User Already Rated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 403 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.forbidden;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Delete Rate_1_Wrong User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "100"
+								},
+								{
+									"key": "rateId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Delete Rate_1_Wrong Rate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Delete Rate_1_User Not Creator",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 403 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.forbidden;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								},
+								{
+									"key": "rateId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rate_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([204]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rates By User (Empty)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get events rates\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'events rates count in total').to.eql(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Get Rates By User_Wrong User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_2 - Event_38",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 4\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_3 - Event_38",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 38,\r\n  \"rate\": 4\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rates By User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get events rates\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[0].rate, '\"rate\" field').to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Update Rate_2 Wrong Rate Less",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=0",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "0"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Update Rate_2 Wrong Rate More",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.badRequest;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=6",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "6"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Update Rate_2 Wrong User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=5",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "100"
+								},
+								{
+									"key": "rateId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Update Rate_2 Wrong Rate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 404 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.notFound;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=5",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed Update Rate_2 User is not Creator",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Ответ должен содержать код статуса 403 и данные в формате json\", function () {\r",
+									"    pm.response.to.be.forbidden;    \r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"const target = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Ошибка должна содержать поля: status, reason, message и timestamp\", function () {\r",
+									"pm.expect(target).to.have.property('status');\r",
+									"pm.expect(target).to.have.property('reason');\r",
+									"pm.expect(target).to.have.property('message');\r",
+									"pm.expect(target).to.have.property('timestamp');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=5",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								},
+								{
+									"key": "rateId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rate_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate/:rateId?rate=5",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate",
+								":rateId"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								},
+								{
+									"key": "rateId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Updated Rates By User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get events rates\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData.length, 'requests count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"id\" field').to.eql(2);\r",
+									"    pm.expect(jsonData[0].user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData[0].event, '\"event\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[0].rate, '\"rate\" field').to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By User ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].rate, '\"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData.initiator.rate, 'jsonData.initiator.rate\" field').to.eql(4.5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63"
+								},
+								{
+									"key": "eventId",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Events: Test Ratings",
+			"item": [
+				{
+					"name": "Get Events By All Filters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events?users=63&states=PUBLISHED&categories=55&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&from=0&size=10",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events"
+							],
+							"query": [
+								{
+									"key": "users",
+									"value": "63"
+								},
+								{
+									"key": "states",
+									"value": "PUBLISHED"
+								},
+								{
+									"key": "categories",
+									"value": "55"
+								},
+								{
+									"key": "rangeStart",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public Events: Test Ratings",
+			"item": [
+				{
+					"name": "Post Event_39",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_2');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_2');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_2');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(63);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"let moment = require('moment');\r",
+									"\r",
+									"let m = moment();\r",
+									"m.add(3, 'hour');\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"eventDate\", m.format('YYYY-MM-DD HH:mm:ss'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_2\",\r\n  \"annotation\": \"new_event_annotation_2\",\r\n  \"description\": \"new_event_description_2\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_39 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "39"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_14 - Event_39",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(14);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=39",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "39"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_15 - Event_39",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(15);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=39",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "39"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_4 - Event_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 39,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_5 - Event_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(5);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(65);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(39);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 39,\r\n  \"rate\": 5\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get event by id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, 'result: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData.views, 'result: \"views\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.rate, 'result: \"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData.initiator.rate, 'jsonData.initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(2);\r",
+									"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(5.0);\r",
+									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events?categories=55&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "55"
+								},
+								{
+									"key": "paid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "onlyAvailable",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "EVENT_DATE",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events - Sorted By Rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(10);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/events?rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01&sort=RATING",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "55",
+									"disabled": true
+								},
+								{
+									"key": "paid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								},
+								{
+									"key": "onlyAvailable",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "RATING"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Compilations: Test Feature",
+			"item": [
+				{
+					"name": "Post Compilation_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('compilation_1');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(38);\r",
+									"    pm.expect(jsonData.events[0].rate, '\"rate\" field of event').to.eql(4.5);\r",
+									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    38\r\n  ],\r\n  \"pinned\": false,\r\n  \"title\": \"compilation_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Compilation_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test create compilation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('updated_compilation_1');\r",
+									"    pm.expect(jsonData.pinned, '\"pinned\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.events.length, '\"events count\" field').to.eql(1);\r",
+									"    pm.expect(jsonData.events[0].id, '\"id\" field of event').to.eql(38);\r",
+									"    pm.expect(jsonData.events[0].rate, '\"rate\" field of event').to.eql(4.5);\r",
+									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    38\r\n  ],\r\n  \"pinned\": true,\r\n  \"title\": \"updated_compilation_1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public Compilations: Test Feature",
+			"item": [
+				{
+					"name": "Get Compilations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'compilations count in total').to.eql(6);\r",
+									"\r",
+									"    pm.expect(jsonData[5].id, 'result[5]: \"id\" field').to.eql(7);\r",
+									"    pm.expect(jsonData[5].events[0].rate, 'result[5]: \"id\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[5].events[0].initiator.rate, 'jsonData[5].events[0].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Compilation By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get compilations\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(7);\r",
+									"    pm.expect(jsonData.events[0].rate, 'result[0]: \"id\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData.events[0].initiator.rate, 'jsonData.events[0].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/compilations/:compId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"compilations",
+								":compId"
+							],
+							"variable": [
+								{
+									"key": "compId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private Events Rating",
+			"item": [
+				{
+					"name": "Get  Events Rating - 2 events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(10);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
+									"    pm.expect(jsonData[1].id, 'result[1]: \"id\" field').to.eql(38);\r",
+									"    pm.expect(jsonData[1].rate, 'result[1]: \"rate\" field').to.eql(4.5);\r",
+									"    pm.expect(jsonData[1].initiator.rate, 'jsonData[1].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rating?rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "55",
+									"disabled": true
+								},
+								{
+									"key": "paid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Events Rating - 1 events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Test get events\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(jsonData.length, 'events count in total').to.eql(1);\r",
+									"        pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(39);\r",
+									"    pm.expect(jsonData[0].rate, 'result[0]: \"rate\" field').to.eql(5.0);\r",
+									"    pm.expect(jsonData[0].initiator.rate, 'jsonData[0].initiator.rate\" field').to.eql(4.75);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rating?count=1&rangeStart=2023-01-01 00:00:01&rangeEnd=2025-01-01 00:00:01",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								},
+								{
+									"key": "categories",
+									"value": "55",
+									"disabled": true
+								},
+								{
+									"key": "paid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "rangeStart",
+									"value": "2023-01-01 00:00:01"
+								},
+								{
+									"key": "rangeEnd",
+									"value": "2025-01-01 00:00:01"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private Users Rating",
+			"item": [
+				{
+					"name": "Post User_67",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name, '\"name\" field').to.eql('user_name_5');\r",
+									"    pm.expect(jsonData.email, '\"email\" field').to.eql('email_5@email.ru');\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"user_name_5\",\r\n  \"email\": \"email_5@email.ru\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/users",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event_40",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(40);\r",
+									"    pm.expect(jsonData.title, '\"title\" field').to.eql('event_title_3');\r",
+									"    pm.expect(jsonData.annotation, '\"annotation\" field').to.eql('new_event_annotation_3');\r",
+									"    pm.expect(jsonData.description, '\"description\" field').to.eql('new_event_description_3');\r",
+									"    pm.expect(jsonData.category.id, '\"category.id\" field').to.eql(55);\r",
+									"    pm.expect(jsonData.eventDate, '\"eventDate\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.initiator.id, '\"initiator.id\" field').to.eql(67);\r",
+									"    pm.expect(jsonData.location, '\"location\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.paid, '\"paid\" field').to.eql(true);\r",
+									"    pm.expect(jsonData.participantLimit, '\"participantLimit\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.publishedOn, '\"publishedOn\" field').to.eql(null);\r",
+									"    pm.expect(jsonData.requestModeration, '\"requestModeration\" field').to.eql(false);\r",
+									"    pm.expect(jsonData.views, '\"views\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.confirmedRequests, '\"confirmedRequests\" field').to.eql(0);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PENDING');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"let moment = require('moment');\r",
+									"\r",
+									"let m = moment();\r",
+									"m.add(3, 'hour');\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"eventDate\", m.format('YYYY-MM-DD HH:mm:ss'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"event_title_3\",\r\n  \"annotation\": \"new_event_annotation_3\",\r\n  \"description\": \"new_event_description_3\",\r\n  \"category\": 55,\r\n  \"eventDate\": \"{{eventDate}}\",\r\n  \"location\": {\r\n    \"lat\": 55.754167,\r\n    \"lon\": 37.62\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 0,\r\n  \"requestModeration\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "67"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Admin Event_3 - PUBLISH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test update event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(40);\r",
+									"    pm.expect(jsonData.state, '\"state\" field').to.eql('PUBLISHED');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stateAction\": \"PUBLISH_EVENT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/admin/events/:eventId",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"admin",
+								"events",
+								":eventId"
+							],
+							"variable": [
+								{
+									"key": "eventId",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Request_16 - Event_40",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create request\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(16);\r",
+									"    pm.expect(jsonData.requester, '\"requester\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(40);\r",
+									"    pm.expect(jsonData.created, '\"created\" field').to.not.eql(null);\r",
+									"    pm.expect(jsonData.status, '\"status\" field').to.eql('CONFIRMED');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/requests?eventId=40",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "eventId",
+									"value": "40"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Rate_6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Test create rate event\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id, '\"id\" field').to.eql(6);\r",
+									"    pm.expect(jsonData.user, '\"user\" field').to.eql(64);\r",
+									"    pm.expect(jsonData.event, '\"event\" field').to.eql(40);\r",
+									"    pm.expect(jsonData.rate, '\"rate\" field').to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event\": 40,\r\n  \"rate\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/events/rate",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"events",
+								"rate"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(10);\r",
+									"    pm.expect(jsonData[0].id, '\"jsonData[0].id\" field to equal').to.eql(63);\r",
+									"    pm.expect(jsonData[1].id, '\"jsonData[1].id\" field to equal').to.eql(67);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/rating",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Rating - 1 user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Test get users\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length, 'users count in total').to.eql(1);\r",
+									"    pm.expect(jsonData[0].id, '\"jsonData[0].id\" field to equal').to.eql(63);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{mainUrl}}/users/:userId/rating?count=1",
+							"host": [
+								"{{mainUrl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "mainUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
