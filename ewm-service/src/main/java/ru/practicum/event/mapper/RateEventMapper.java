@@ -12,14 +12,9 @@ public interface RateEventMapper {
             return null;
         }
 
-        Long id = rateEvent.getId();
-
-        Long user = rateEvent.getUser().getId();
-
-        Long event = rateEvent.getEvent().getId();
-
-        Integer rate = rateEvent.getRate();
-
-        return new RateEventResponse(id, user, event, rate);
+        return new RateEventResponse(rateEvent.getId(),
+                rateEvent.getUser().getId(),
+                rateEvent.getEvent().getId(),
+                rateEvent.getRate());
     }
 }
